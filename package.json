@@ -1,0 +1,19 @@
+{
+  "name": "explore2k18",
+  "version": "1.0.0",
+  "description": "Website for the Explore Fest 2k18",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ms10398/Explore2k18.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ms10398/Explore2k18/issues"
+  },
+  "homepage": "https://github.com/ms10398/Explore2k18#readme"
+}
