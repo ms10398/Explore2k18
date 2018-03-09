@@ -1,21 +1,43 @@
 var exploreImage = false;
+var exploreImageElem = $('#explore-image');
 
-var dummyEl = document.getElementById('text');
 setInterval(function () {
-	if(!exploreImage) {
-		exploreImage = true;
-		if($('#explore-image').hasClass('zoomOut')) {
-			$('#explore-image').removeClass('zoomOut');
-		}
-		$('#explore-image').addClass('zoomIn')
+	// if(!exploreImage) {
+	// 	exploreImage = true;
+	// 	if($('#explore-image').hasClass('bounceOutUp')) {
+	// 		$('#explore-image').removeClass('bounceOutUp');
+	// 	}
+	// 	$('#explore-image').addClass('rollIn');
+	// 	setTimeout(function () {
+	// 		$('#explore-image').removeClass('rollIn');
+	// 		$('#explore-image').addClass('bounceInUp');
+	// 	},1000);
+	// }
+	// else
+	// {
+	// 	exploreImage = false;
+	// 	$('#explore-image').removeClass('bounceInUp');
+	// 	$('#explore-image').addClass('rollOut');
+	// 	setTimeout(function () {
+	// 		$('#explore-image').removeClass('rollOut');
+	// 		$('#explore-image').addClass('bounceOutUp');
+	// 	},1000);	
+	// }
+	$('#image-inner-div').attr('style','width:50%;height:auto;');
+	if(exploreImageElem.hasClass('fadeOut')) {
+		exploreImageElem.removeClass('fadeOut');
 	}
-	else
-	{
-		exploreImage = false;
-		$('#explore-image').removeClass('zoomIn');
-		$('#explore-image').attr('style','zoomOut');
-	}
-},800);
+	exploreImageElem.addClass('bounceInDown');
+	setTimeout(function () {
+		exploreImageElem.removeClass('bounceInDown');
+		$('#image-inner-div').attr('style','width:70%;height:70%;');
+			exploreImageElem.addClass('zoomIn');
+			setTimeout(function () {
+				exploreImageElem.removeClass('zoomIn');
+			},1000);
+			exploreImageElem.addClass('fadeOut');
+	},1000);	
+},3000);
 
 $(function() {
   $.scrollify({
