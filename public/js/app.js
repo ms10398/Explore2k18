@@ -1,5 +1,6 @@
 var exploreImage = false;
 var exploreImageElem = $('#explore-image');
+var countEventAnimation = 0 , countTeamAnimation = 0;
 
 setInterval(function () {
 	// if(!exploreImage) {
@@ -34,10 +35,29 @@ setInterval(function () {
 			exploreImageElem.addClass('zoomIn');
 			setTimeout(function () {
 				exploreImageElem.removeClass('zoomIn');
-			},1000);
+			},800);
 			exploreImageElem.addClass('fadeOut');
-	},1000);	
-},3000);
+	},800);
+	if($.scrollify.current()[0].id === 'div1' && countEventAnimation < 1) {
+		countEventAnimation++;
+		countTeamAnimation = 0;
+		$('#div1-inner-span').attr('style','display:block;');
+		$('#div1-inner').addClass('slideInDown');
+		setTimeout(function () {
+			$('#div1-inner').removeClass('slideInDown');
+		},700);
+	}
+	if($.scrollify.current()[0].id === 'div2' && countTeamAnimation < 1) {
+		countTeamAnimation++;
+		$('#div1-inner-span').attr('style','display:none;');
+		$('#div2-inner-span').attr('style','display:block;')
+		countEventAnimation = 0;
+		$('#div2-inner').addClass('slideInLeft');
+		setTimeout(function () {
+			$('#div2-inner').removeClass('slideInLeft');
+		},1000);
+	}	
+},2000);
 
 $(function() {
   $.scrollify({
