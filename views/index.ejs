@@ -1,11 +1,992 @@
 <!DOCTYPE html>
 <html lang='en'>
+
 <head>
-  <meta charset='UTF-8'/>
-  <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
-  <meta http-equiv='X-UA-Compatible' content='ie=edge'/>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <meta http-equiv='X-UA-Compatible' content='ie=edge' />
   <title>Explore 2k18</title>
-  <link rel="stylesheet" href="../css/styles.css">
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.5/jquery.pagepiling.min.css" />
+  <style>
+    body {
+      display: flex;
+    }
+
+    #particles {
+      position: fixed;
+      height: 100%;
+      width: 100%;
+    }
+
+    #intro {
+      position: absolute;
+      top: 25%;
+      width: 100%;
+      text-align: center;
+    }
+
+    .logo {
+      width: 35%;
+    }
+
+    .liquid-button {
+      margin: auto;
+    }
+
+    .liquid-button path {
+      cursor: pointer;
+    }
+
+    .btn.is-open~.description {
+      opacity: 0;
+    }
+
+    .btn {
+      display: block;
+      position: relative;
+      margin: 0 auto;
+      padding-right: 5%;
+      width: 200px;
+      height: 80px;
+      -webkit-transition: width 0.8s cubic-bezier(0.23, 1, 0.32, 1), height 0.8s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition: width 0.8s cubic-bezier(0.23, 1, 0.32, 1), height 0.8s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition: width 0.8s cubic-bezier(0.23, 1, 0.32, 1), height 0.8s cubic-bezier(0.23, 1, 0.32, 1), transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition: width 0.8s cubic-bezier(0.23, 1, 0.32, 1), height 0.8s cubic-bezier(0.23, 1, 0.32, 1), transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      -webkit-transform-origin: 50% 50%;
+      transform-origin: 50% 50%;
+      text-align: center;
+    }
+
+    .btn-front {
+      display: block;
+      position: absolute;
+      line-height: 80px;
+      cursor: pointer;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      -webkit-transition: background 0.15s ease, line-height 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+      transition: background 0.15s ease, line-height 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+
+    .btn.is-open .btn-front {
+      pointer-events: none;
+      line-height: 160px;
+    }
+
+    .btn-back {
+      position: absolute;
+      display: none;
+      width: 100%;
+      height: 100%;
+      background-color: #E5E4E4;
+      color: #222;
+      -webkit-transform: translateZ(-2px) rotateX(180deg);
+      transform: translateZ(-2px) rotateX(180deg);
+      overflow: hidden;
+      -webkit-transition: -webkit-box-shadow 0.8s ease;
+      transition: -webkit-box-shadow 0.8s ease;
+      transition: box-shadow 0.8s ease;
+      transition: box-shadow 0.8s ease, -webkit-box-shadow 0.8s ease;
+    }
+
+    .btn-back p {
+      margin-top: 27px;
+      margin-bottom: 25px;
+    }
+
+    .btn-back button {
+      padding: 12px 20px;
+      width: 30%;
+      margin: 0 5px;
+      background-color: transparent;
+      border: 0;
+      border-radius: 2px;
+      font-size: 1em;
+      cursor: pointer;
+      -webkit-appearance: none;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      -webkit-transition: background 0.15s ease;
+      transition: background 0.15s ease;
+    }
+
+    .btn-back button:focus {
+      outline: 0;
+    }
+
+    .btn-back button.yes {
+      background-color: #2196F3;
+      color: #fff;
+    }
+
+    .btn-back button.yes:hover {
+      background-color: #51adf6;
+    }
+
+    .btn-back button.no {
+      color: #2196F3;
+    }
+
+    .btn-back button.no:hover {
+      background-color: #ddd;
+    }
+
+    .btn.is-open .btn-back {
+      -webkit-box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .btn[data-direction="left"] .btn-back,
+    .btn[data-direction="right"] .btn-back {
+      -webkit-transform: translateZ(-2px) rotateY(180deg);
+      transform: translateZ(-2px) rotateY(180deg);
+    }
+
+    .btn.is-open {
+      width: 400px;
+      height: 160px;
+    }
+
+    .btn[data-direction="top"].is-open {
+      -webkit-transform: rotateX(180deg);
+      transform: rotateX(180deg);
+    }
+
+    .btn[data-direction="right"].is-open {
+      -webkit-transform: rotateY(180deg);
+      transform: rotateY(180deg);
+    }
+
+    .btn[data-direction="bottom"].is-open {
+      -webkit-transform: rotateX(-180deg);
+      transform: rotateX(-180deg);
+    }
+
+    .btn[data-direction="left"].is-open {
+      -webkit-transform: rotateY(-180deg);
+      transform: rotateY(-180deg);
+    }
+
+    #gradient {
+      width: 100%;
+      height: 100%;
+      padding: 0px;
+      margin: 0px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    figure {
+      margin: 0;
+    }
+
+    .tile {
+      width: 250px;
+      height: 350px;
+      margin: 2em;
+      position: relative;
+      float: left;
+    }
+
+    .tile .front,
+    .tile .back {
+      display: block;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 250px;
+      height: 350px;
+      position: absolute;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .tile h3,
+    .tile p,
+    .tile a {
+      padding: 0 20px;
+    }
+
+    .tile img {
+      max-height: 130px;
+    }
+
+    .tile .front {
+      background: #962D3E;
+      transition: all .5s ease-in-out;
+      z-index: 2;
+    }
+
+    .tile .front h3 {
+      font-size: 2em;
+      color: white;
+      text-shadow: 0 0 5px #000;
+      margin-top: -1.5em;
+      margin-bottom: 1.5em;
+    }
+
+    .tile .back {
+      background: #374140;
+      color: white;
+      z-index: 1;
+      padding-top: 50px;
+      height: 300px;
+    }
+
+    .tile .back h3 {
+      font-size: 1.5em;
+      color: white;
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
+
+    .tile .back a {
+      display: block;
+      font-size: 1.2em;
+      color: white;
+      border-top: 1px solid #ffcc00;
+      margin: 0 20px;
+      padding: .5em 0;
+    }
+
+    .tile:hover .front {
+      top: -300px;
+      transform: rotate(2deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="pagepiling">
+    <div class="section" id="particles">
+      <div id='intro'>
+        <img src="img/Explore.png" alt="" class="logo">
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
+        <div class="btn">
+          <div class="btn-back">
+            <p>Are you sure you want to do that?</p>
+            <button class="yes">Yes</button>
+            <button class="no">No</button>
+          </div>
+          <div class="btn-front">
+            <svg class="liquid-button" data-text="Register" data-force-factor="0.1" data-layer-1-viscosity="0.5" data-layer-2-viscosity="0.4" data-layer-1-mouse-force="400" data-layer-2-mouse-force="500" data-layer-1-force-limit="1" data-layer-2-force-limit="2" data-color1="#4DE7BF"
+              data-color2="#0A3FC7" data-color3="#2A62F4"></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section" id="gradient">
+      <div class="wrapper">
+        <div class="tile job-bucket">
+          <div class="front">
+            <div class="contents">
+              <img src="http://imgsg.jobing.com/company/images/142939/t/taxi-drivers.jpg" />
+              <h3>Taxi Drivers</h3>
+              <p>"Driving here at Yellow Cab gives me the freedom and flexibility to make money at my pace. Being my own boss allows me to work harder, the more I work the more I can bring in."</p>
+              <br>
+              <a href="#">View Jobs</a>
+            </div>
+          </div>
+          <div class="back">
+            <h3>Open Jobs</h3>
+            <a href="#">Experienced Taxi Driver</a>
+            <a href="#">Taxi Driver - East Valley</a>
+            <a href="#">Taxi Driver - West Valley</a>
+            <a href="#">Taxi Driver - Central Valley</a>
+            <a href="#">View All Jobs</a>
+          </div>
+        </div>
+        <div class="tile job-bucket">
+          <div class="front">
+            <div class="contents">
+              <img src="http://imgsg.jobing.com/company/images/142939/t/taxi-drivers.jpg" />
+              <h3>Taxi Drivers</h3>
+              <p>"Driving here at Yellow Cab gives me the freedom and flexibility to make money at my pace. Being my own boss allows me to work harder, the more I work the more I can bring in."</p>
+              <br>
+              <a href="#">View Jobs</a>
+            </div>
+          </div>
+          <div class="back">
+            <h3>Open Jobs</h3>
+            <a href="#">Experienced Taxi Driver</a>
+            <a href="#">Taxi Driver - East Valley</a>
+            <a href="#">Taxi Driver - West Valley</a>
+            <a href="#">Taxi Driver - Central Valley</a>
+            <a href="#">View All Jobs</a>
+          </div>
+        </div>
+        <div class="tile job-bucket">
+          <div class="front">
+            <div class="contents">
+              <img src="http://imgsg.jobing.com/company/images/142939/t/taxi-drivers.jpg" />
+              <h3>Taxi Drivers</h3>
+              <p>"Driving here at Yellow Cab gives me the freedom and flexibility to make money at my pace. Being my own boss allows me to work harder, the more I work the more I can bring in."</p>
+              <br>
+              <a href="#">View Jobs</a>
+            </div>
+          </div>
+          <div class="back">
+            <h3>Open Jobs</h3>
+            <a href="#">Experienced Taxi Driver</a>
+            <a href="#">Taxi Driver - East Valley</a>
+            <a href="#">Taxi Driver - West Valley</a>
+            <a href="#">Taxi Driver - Central Valley</a>
+            <a href="#">View All Jobs</a>
+          </div>
+        </div>
+        <div class="tile job-bucket">
+          <div class="front">
+            <div class="contents">
+              <img src="http://imgsg.jobing.com/company/images/142939/t/taxi-drivers.jpg" />
+              <h3>Taxi Drivers</h3>
+              <p>"Driving here at Yellow Cab gives me the freedom and flexibility to make money at my pace. Being my own boss allows me to work harder, the more I work the more I can bring in."</p>
+              <br>
+              <a href="#">View Jobs</a>
+            </div>
+          </div>
+          <div class="back">
+            <h3>Open Jobs</h3>
+            <a href="#">Experienced Taxi Driver</a>
+            <a href="#">Taxi Driver - East Valley</a>
+            <a href="#">Taxi Driver - West Valley</a>
+            <a href="#">Taxi Driver - Central Valley</a>
+            <a href="#">View All Jobs</a>
+          </div>
+        </div>
+        <div class="tile job-bucket">
+          <div class="front">
+            <div class="contents">
+              <img src="http://imgsg.jobing.com/company/images/142939/t/taxi-drivers.jpg" />
+              <h3>Taxi Drivers</h3>
+              <p>"Driving here at Yellow Cab gives me the freedom and flexibility to make money at my pace. Being my own boss allows me to work harder, the more I work the more I can bring in."</p>
+              <br>
+              <a href="#">View Jobs</a>
+            </div>
+          </div>
+          <div class="back">
+            <h3>Open Jobs</h3>
+            <a href="#">Experienced Taxi Driver</a>
+            <a href="#">Taxi Driver - East Valley</a>
+            <a href="#">Taxi Driver - West Valley</a>
+            <a href="#">Taxi Driver - Central Valley</a>
+            <a href="#">View All Jobs</a>
+          </div>
+        </div>
+        <div class="tile job-bucket">
+          <div class="front">
+            <div class="contents">
+              <img src="http://imgsg.jobing.com/company/images/142939/t/taxi-drivers.jpg" />
+              <h3>Taxi Drivers</h3>
+              <p>"Driving here at Yellow Cab gives me the freedom and flexibility to make money at my pace. Being my own boss allows me to work harder, the more I work the more I can bring in."</p>
+              <br>
+              <a href="#">View Jobs</a>
+            </div>
+          </div>
+          <div class="back">
+            <h3>Open Jobs</h3>
+            <a href="#">Experienced Taxi Driver</a>
+            <a href="#">Taxi Driver - East Valley</a>
+            <a href="#">Taxi Driver - West Valley</a>
+            <a href="#">Taxi Driver - Central Valley</a>
+            <a href="#">View All Jobs</a>
+          </div>
+        </div>
+        <div class="tile job-bucket">
+          <div class="front">
+            <div class="contents">
+              <img src="http://imgsg.jobing.com/company/images/142939/t/taxi-drivers.jpg" />
+              <h3>Taxi Drivers</h3>
+              <p>"Driving here at Yellow Cab gives me the freedom and flexibility to make money at my pace. Being my own boss allows me to work harder, the more I work the more I can bring in."</p>
+              <br>
+              <a href="#">View Jobs</a>
+            </div>
+          </div>
+          <div class="back">
+            <h3>Open Jobs</h3>
+            <a href="#">Experienced Taxi Driver</a>
+            <a href="#">Taxi Driver - East Valley</a>
+            <a href="#">Taxi Driver - West Valley</a>
+            <a href="#">Taxi Driver - Central Valley</a>
+            <a href="#">View All Jobs</a>
+          </div>
+        </div>
+        <div class="tile job-bucket">
+          <div class="front">
+            <div class="contents">
+              <img src="http://imgsg.jobing.com/company/images/142939/t/taxi-drivers.jpg" />
+              <h3>Taxi Drivers</h3>
+              <p>"Driving here at Yellow Cab gives me the freedom and flexibility to make money at my pace. Being my own boss allows me to work harder, the more I work the more I can bring in."</p>
+              <br>
+              <a href="#">View Jobs</a>
+            </div>
+          </div>
+          <div class="back">
+            <h3>Open Jobs</h3>
+            <a href="#">Experienced Taxi Driver</a>
+            <a href="#">Taxi Driver - East Valley</a>
+            <a href="#">Taxi Driver - West Valley</a>
+            <a href="#">Taxi Driver - Central Valley</a>
+            <a href="#">View All Jobs</a>
+          </div>
+        </div>
+        <div class="tile job-bucket">
+          <div class="front">
+            <div class="contents">
+              <img src="http://imgsg.jobing.com/company/images/142939/t/taxi-drivers.jpg" />
+              <h3>Taxi Drivers</h3>
+              <p>"Driving here at Yellow Cab gives me the freedom and flexibility to make money at my pace. Being my own boss allows me to work harder, the more I work the more I can bring in."</p>
+              <br>
+              <a href="#">View Jobs</a>
+            </div>
+          </div>
+          <div class="back">
+            <h3>Open Jobs</h3>
+            <a href="#">Experienced Taxi Driver</a>
+            <a href="#">Taxi Driver - East Valley</a>
+            <a href="#">Taxi Driver - West Valley</a>
+            <a href="#">Taxi Driver - Central Valley</a>
+            <a href="#">View All Jobs</a>
+          </div>
+        </div>
+        <div class="tile job-bucket">
+          <div class="front">
+            <div class="contents">
+              <img src="http://imgsg.jobing.com/company/images/142939/t/taxi-drivers.jpg" />
+              <h3>Taxi Drivers</h3>
+              <p>"Driving here at Yellow Cab gives me the freedom and flexibility to make money at my pace. Being my own boss allows me to work harder, the more I work the more I can bring in."</p>
+              <br>
+              <a href="#">View Jobs</a>
+            </div>
+          </div>
+          <div class="back">
+            <h3>Open Jobs</h3>
+            <a href="#">Experienced Taxi Driver</a>
+            <a href="#">Taxi Driver - East Valley</a>
+            <a href="#">Taxi Driver - West Valley</a>
+            <a href="#">Taxi Driver - Central Valley</a>
+            <a href="#">View All Jobs</a>
+          </div>
+        </div>
+        <div class="tile job-bucket">
+          <div class="front">
+            <div class="contents">
+              <img src="http://imgsg.jobing.com/company/images/142939/t/sedan-drivers.jpg" />
+              <h3>Sedan Drivers</h3>
+              <p>"Being able to offer a higher level of service, wearing a black suit and tie helps make me stand out from the crowd. When I meet someone for the first time I feel they are more relaxed...</p>
+              <br>
+              <a href="#">View Jobs</a>
+            </div>
+          </div>
+          <div class="back">
+            <h3>Open Jobs</h3>
+            <a href="#">Medical Transportation Sedan Drivers Phoenix</a>
+            <a href="#">Sedan Driver - East Valley</a>
+            <a href="#">Sedan Driver - Nights</a>
+            <a href="#">View All Jobs</a>
+          </div>
+        </div>
+        <div class="tile job-bucket">
+          <div class="front">
+            <div class="contents">
+              <img src="http://imgsg.jobing.com/company/images/142939/t/customer-service-representitives.jpg" />
+              <h3>Dispatchers</h3>
+              <p>"Coming to work every day is exciting because I love my job and the people I work with. I enjoy interacting with people and this allows me to do so, but in a safe working environment with flexible shifts.</p>
+              <br>
+              <a href="#">View Jobs</a>
+            </div>
+          </div>
+          <div class="back">
+            <h3>Open Jobs</h3>
+            <a href="#">Customer Service Representatives Phoenix</a>
+            <a href="#">Street Team</a>
+            <a href="#">View All Jobs</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      Section 3
+    </div>
+    <div class="section">Section 4</div>
+  </div>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.5/jquery.pagepiling.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#pagepiling').pagepiling({
+        direction: 'horizontal',
+        verticalCentered: true,
+        sectionsColor: ['#16a085', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
+        anchors: [],
+        scrollingSpeed: 700,
+        easing: 'swing',
+        loopBottom: false,
+        loopTop: false,
+        css3: true,
+        navigation: {
+          'textColor': '#000',
+          'bulletsColor': '#000',
+          'position': 'right',
+          'tooltips': []
+        },
+        normalScrollElements: null,
+        normalScrollElementTouchThreshold: 5,
+        touchSensitivity: 5,
+        keyboardScrolling: true,
+        sectionSelector: '.section',
+        animateAnchor: false,
+        onLeave: function(index, nextIndex, direction) {},
+        afterLoad: function(anchorLink, index) {},
+        afterRender: function() {},
+      });
+    });
+  </script>
+  <script type='text/javascript' src='./js/jquery.particleground.min.js'></script>
+  <script type="text/javascript">
+    particleground(document.getElementById('particles'), {
+      dotColor: '#5cbdaa',
+      lineColor: '#5cbdaa'
+    });
+  </script>
+  <script type="text/javascript">
+    const LiquidButton = class LiquidButton {
+      constructor(svg) {
+        const options = svg.dataset;
+        this.id = this.constructor.id || (this.constructor.id = 1);
+        this.constructor.id++;
+        this.xmlns = 'http://www.w3.org/2000/svg';
+        this.tension = options.tension * 1 || 0.4;
+        this.width = options.width * 1 || 200;
+        this.height = options.height * 1 || 50;
+        this.margin = options.margin || 40;
+        this.hoverFactor = options.hoverFactor || -0.1;
+        this.gap = options.gap || 5;
+        this.debug = options.debug || false;
+        this.forceFactor = options.forceFactor || 0.2;
+        this.color1 = options.color1 || '#36DFE7';
+        this.color2 = options.color2 || '#8F17E1';
+        this.color3 = options.color3 || '#BF09E6';
+        this.textColor = options.textColor || '#FFFFFF';
+        this.text = options.text || 'Button';
+        this.svg = svg;
+        this.layers = [{
+          points: [],
+          viscosity: 0.5,
+          mouseForce: 100,
+          forceLimit: 2,
+        }, {
+          points: [],
+          viscosity: 0.8,
+          mouseForce: 150,
+          forceLimit: 3,
+        }];
+        for (let layerIndex = 0; layerIndex < this.layers.length; layerIndex++) {
+          const layer = this.layers[layerIndex];
+          layer.viscosity = options['layer-' + (layerIndex + 1) + 'Viscosity'] * 1 || layer.viscosity;
+          layer.mouseForce = options['layer-' + (layerIndex + 1) + 'MouseForce'] * 1 || layer.mouseForce;
+          layer.forceLimit = options['layer-' + (layerIndex + 1) + 'ForceLimit'] * 1 || layer.forceLimit;
+          layer.path = document.createElementNS(this.xmlns, 'path');
+          this.svg.appendChild(layer.path);
+        }
+        this.wrapperElement = options.wrapperElement || document.body;
+        if (!this.svg.parentElement) {
+          this.wrapperElement.append(this.svg);
+        }
+
+        this.svgText = document.createElementNS(this.xmlns, 'text');
+        this.svgText.setAttribute('x', '50%');
+        this.svgText.setAttribute('y', '50%');
+        this.svgText.setAttribute('dy', ~~(this.height / 8) + 'px');
+        this.svgText.setAttribute('font-size', ~~(this.height / 3));
+        this.svgText.style.fontFamily = 'sans-serif';
+        this.svgText.setAttribute('text-anchor', 'middle');
+        this.svgText.setAttribute('pointer-events', 'none');
+        this.svg.appendChild(this.svgText);
+
+        this.svgDefs = document.createElementNS(this.xmlns, 'defs')
+        this.svg.appendChild(this.svgDefs);
+
+        this.touches = [];
+        this.noise = options.noise || 0;
+        document.body.addEventListener('touchstart', this.touchHandler);
+        document.body.addEventListener('touchmove', this.touchHandler);
+        document.body.addEventListener('touchend', this.clearHandler);
+        document.body.addEventListener('touchcancel', this.clearHandler);
+        this.svg.addEventListener('mousemove', this.mouseHandler);
+        this.svg.addEventListener('mouseout', this.clearHandler);
+        this.initOrigins();
+        this.animate();
+      }
+
+      get mouseHandler() {
+        return (e) => {
+          this.touches = [{
+            x: e.offsetX,
+            y: e.offsetY,
+            force: 1,
+          }];
+        };
+      }
+
+      get touchHandler() {
+        return (e) => {
+          this.touches = [];
+          const rect = this.svg.getBoundingClientRect();
+          for (let touchIndex = 0; touchIndex < e.changedTouches.length; touchIndex++) {
+            const touch = e.changedTouches[touchIndex];
+            const x = touch.pageX - rect.left;
+            const y = touch.pageY - rect.top;
+            if (x > 0 && y > 0 && x < this.svgWidth && y < this.svgHeight) {
+              this.touches.push({
+                x,
+                y,
+                force: touch.force || 1
+              });
+            }
+          }
+          e.preventDefault();
+        };
+      }
+
+      get clearHandler() {
+        return (e) => {
+          this.touches = [];
+        };
+      }
+
+      get raf() {
+        return this.__raf || (this.__raf = (
+          window.requestAnimationFrame ||
+          window.webkitRequestAnimationFrame ||
+          window.mozRequestAnimationFrame ||
+          function(callback) {
+            setTimeout(callback, 10)
+          }
+        ).bind(window));
+      }
+
+      distance(p1, p2) {
+        return Math.sqrt(Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2));
+      }
+
+      update() {
+        for (let layerIndex = 0; layerIndex < this.layers.length; layerIndex++) {
+          const layer = this.layers[layerIndex];
+          const points = layer.points;
+          for (let pointIndex = 0; pointIndex < points.length; pointIndex++) {
+            const point = points[pointIndex];
+            const dx = point.ox - point.x + (Math.random() - 0.5) * this.noise;
+            const dy = point.oy - point.y + (Math.random() - 0.5) * this.noise;
+            const d = Math.sqrt(dx * dx + dy * dy);
+            const f = d * this.forceFactor;
+            point.vx += f * ((dx / d) || 0);
+            point.vy += f * ((dy / d) || 0);
+            for (let touchIndex = 0; touchIndex < this.touches.length; touchIndex++) {
+              const touch = this.touches[touchIndex];
+              let mouseForce = layer.mouseForce;
+              if (
+                touch.x > this.margin &&
+                touch.x < this.margin + this.width &&
+                touch.y > this.margin &&
+                touch.y < this.margin + this.height
+              ) {
+                mouseForce *= -this.hoverFactor;
+              }
+              const mx = point.x - touch.x;
+              const my = point.y - touch.y;
+              const md = Math.sqrt(mx * mx + my * my);
+              const mf = Math.max(-layer.forceLimit, Math.min(layer.forceLimit, (mouseForce * touch.force) / md));
+              point.vx += mf * ((mx / md) || 0);
+              point.vy += mf * ((my / md) || 0);
+            }
+            point.vx *= layer.viscosity;
+            point.vy *= layer.viscosity;
+            point.x += point.vx;
+            point.y += point.vy;
+          }
+          for (let pointIndex = 0; pointIndex < points.length; pointIndex++) {
+            const prev = points[(pointIndex + points.length - 1) % points.length];
+            const point = points[pointIndex];
+            const next = points[(pointIndex + points.length + 1) % points.length];
+            const dPrev = this.distance(point, prev);
+            const dNext = this.distance(point, next);
+
+            const line = {
+              x: next.x - prev.x,
+              y: next.y - prev.y,
+            };
+            const dLine = Math.sqrt(line.x * line.x + line.y * line.y);
+
+            point.cPrev = {
+              x: point.x - (line.x / dLine) * dPrev * this.tension,
+              y: point.y - (line.y / dLine) * dPrev * this.tension,
+            };
+            point.cNext = {
+              x: point.x + (line.x / dLine) * dNext * this.tension,
+              y: point.y + (line.y / dLine) * dNext * this.tension,
+            };
+          }
+        }
+      }
+
+      animate() {
+        this.raf(() => {
+          this.update();
+          this.draw();
+          this.animate();
+        });
+      }
+
+      get svgWidth() {
+        return this.width + this.margin * 2;
+      }
+
+      get svgHeight() {
+        return this.height + this.margin * 2;
+      }
+
+      draw() {
+        for (let layerIndex = 0; layerIndex < this.layers.length; layerIndex++) {
+          const layer = this.layers[layerIndex];
+          if (layerIndex === 1) {
+            if (this.touches.length > 0) {
+              while (this.svgDefs.firstChild) {
+                this.svgDefs.removeChild(this.svgDefs.firstChild);
+              }
+              for (let touchIndex = 0; touchIndex < this.touches.length; touchIndex++) {
+                const touch = this.touches[touchIndex];
+                const gradient = document.createElementNS(this.xmlns, 'radialGradient');
+                gradient.id = 'liquid-gradient-' + this.id + '-' + touchIndex;
+                const start = document.createElementNS(this.xmlns, 'stop');
+                start.setAttribute('stop-color', this.color3);
+                start.setAttribute('offset', '0%');
+                const stop = document.createElementNS(this.xmlns, 'stop');
+                stop.setAttribute('stop-color', this.color2);
+                stop.setAttribute('offset', '100%');
+                gradient.appendChild(start);
+                gradient.appendChild(stop);
+                this.svgDefs.appendChild(gradient);
+                gradient.setAttribute('cx', touch.x / this.svgWidth);
+                gradient.setAttribute('cy', touch.y / this.svgHeight);
+                gradient.setAttribute('r', touch.force);
+                layer.path.style.fill = 'url(#' + gradient.id + ')';
+              }
+            } else {
+              layer.path.style.fill = this.color2;
+            }
+          } else {
+            layer.path.style.fill = this.color1;
+          }
+          const points = layer.points;
+          const commands = [];
+          commands.push('M', points[0].x, points[0].y);
+          for (let pointIndex = 1; pointIndex < points.length; pointIndex += 1) {
+            commands.push('C',
+              points[(pointIndex + 0) % points.length].cNext.x,
+              points[(pointIndex + 0) % points.length].cNext.y,
+              points[(pointIndex + 1) % points.length].cPrev.x,
+              points[(pointIndex + 1) % points.length].cPrev.y,
+              points[(pointIndex + 1) % points.length].x,
+              points[(pointIndex + 1) % points.length].y
+            );
+          }
+          commands.push('Z');
+          layer.path.setAttribute('d', commands.join(' '));
+        }
+        this.svgText.textContent = this.text;
+        this.svgText.style.fill = this.textColor;
+      }
+
+      createPoint(x, y) {
+        return {
+          x: x,
+          y: y,
+          ox: x,
+          oy: y,
+          vx: 0,
+          vy: 0,
+        };
+      }
+
+      initOrigins() {
+        this.svg.setAttribute('width', this.svgWidth);
+        this.svg.setAttribute('height', this.svgHeight);
+        for (let layerIndex = 0; layerIndex < this.layers.length; layerIndex++) {
+          const layer = this.layers[layerIndex];
+          const points = [];
+          for (let x = ~~(this.height / 2); x < this.width - ~~(this.height / 2); x += this.gap) {
+            points.push(this.createPoint(
+              x + this.margin,
+              this.margin
+            ));
+          }
+          for (let alpha = ~~(this.height * 1.25); alpha >= 0; alpha -= this.gap) {
+            const angle = (Math.PI / ~~(this.height * 1.25)) * alpha;
+            points.push(this.createPoint(
+              Math.sin(angle) * this.height / 2 + this.margin + this.width - this.height / 2,
+              Math.cos(angle) * this.height / 2 + this.margin + this.height / 2
+            ));
+          }
+          for (let x = this.width - ~~(this.height / 2) - 1; x >= ~~(this.height / 2); x -= this.gap) {
+            points.push(this.createPoint(
+              x + this.margin,
+              this.margin + this.height
+            ));
+          }
+          for (let alpha = 0; alpha <= ~~(this.height * 1.25); alpha += this.gap) {
+            const angle = (Math.PI / ~~(this.height * 1.25)) * alpha;
+            points.push(this.createPoint(
+              (this.height - Math.sin(angle) * this.height / 2) + this.margin - this.height / 2,
+              Math.cos(angle) * this.height / 2 + this.margin + this.height / 2
+            ));
+          }
+          layer.points = points;
+        }
+      }
+    }
+
+
+    const redraw = () => {
+      button.initOrigins();
+    };
+
+    const buttons = document.getElementsByClassName('liquid-button');
+    for (let buttonIndex = 0; buttonIndex < buttons.length; buttonIndex++) {
+      const button = buttons[buttonIndex];
+      button.liquidButton = new LiquidButton(button);
+    }
+
+    var btn = document.querySelector('.btn');
+    var btnback = document.querySelector('.btn-back');
+
+    var btnFront = btn.querySelector('.btn-front'),
+      btnYes = btn.querySelector('.btn-back .yes'),
+      btnNo = btn.querySelector('.btn-back .no');
+
+    btnFront.addEventListener('click', function(event) {
+      btnback.style.display = 'block';
+      var mx = event.clientX - btn.offsetLeft,
+        my = event.clientY - btn.offsetTop;
+
+      var w = btn.offsetWidth,
+        h = btn.offsetHeight;
+
+      var directions = [{
+          id: 'top',
+          x: w / 2,
+          y: 0
+        },
+        {
+          id: 'right',
+          x: w,
+          y: h / 2
+        },
+        {
+          id: 'bottom',
+          x: w / 2,
+          y: h
+        },
+        {
+          id: 'left',
+          x: 0,
+          y: h / 2
+        }
+      ];
+
+      directions.sort(function(a, b) {
+        return distance(mx, my, a.x, a.y) - distance(mx, my, b.x, b.y);
+      });
+
+      btn.setAttribute('data-direction', directions.shift().id);
+      btn.classList.add('is-open');
+
+    });
+
+    btnYes.addEventListener('click', function(event) {
+      btn.classList.remove('is-open');
+      btnback.style.display = 'none';
+    });
+
+    btnNo.addEventListener('click', function(event) {
+      btn.classList.remove('is-open');
+      btnback.style.display = 'none';
+    });
+
+    function distance(x1, y1, x2, y2) {
+      var dx = x1 - x2;
+      var dy = y1 - y2;
+      return Math.sqrt(dx * dx + dy * dy);
+    }
+
+    var colors = new Array(
+      [62, 35, 255], [60, 255, 60], [255, 35, 98], [45, 175, 230], [255, 0, 255], [255, 128, 0]);
+
+    var step = 0;
+    //color table indices for:
+    // current color left
+    // next color left
+    // current color right
+    // next color right
+    var colorIndices = [0, 1, 2, 3];
+
+    //transition speed
+    var gradientSpeed = 0.002;
+
+    function updateGradient() {
+
+      if ($ === undefined) return;
+
+      var c0_0 = colors[colorIndices[0]];
+      var c0_1 = colors[colorIndices[1]];
+      var c1_0 = colors[colorIndices[2]];
+      var c1_1 = colors[colorIndices[3]];
+
+      var istep = 1 - step;
+      var r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
+      var g1 = Math.round(istep * c0_0[1] + step * c0_1[1]);
+      var b1 = Math.round(istep * c0_0[2] + step * c0_1[2]);
+      var color1 = "rgb(" + r1 + "," + g1 + "," + b1 + ")";
+
+      var r2 = Math.round(istep * c1_0[0] + step * c1_1[0]);
+      var g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
+      var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
+      var color2 = "rgb(" + r2 + "," + g2 + "," + b2 + ")";
+
+      $('#gradient').css({
+        background: "-webkit-gradient(linear, left top, right top, from(" + color1 + "), to(" + color2 + "))"
+      }).css({
+        background: "-moz-linear-gradient(left, " + color1 + " 0%, " + color2 + " 100%)"
+      });
+
+      step += gradientSpeed;
+      if (step >= 1) {
+        step %= 1;
+        colorIndices[0] = colorIndices[1];
+        colorIndices[2] = colorIndices[3];
+
+        //pick two new target color indices
+        //do not pick the same as the current one
+        colorIndices[1] = (colorIndices[1] + Math.floor(1 + Math.random() * (colors.length - 1))) % colors.length;
+        colorIndices[3] = (colorIndices[3] + Math.floor(1 + Math.random() * (colors.length - 1))) % colors.length;
+
+      }
+    }
+
+    setInterval(updateGradient, 2);
+  </script>
 </body>
+
 </html>
