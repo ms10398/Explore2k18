@@ -7,7 +7,18 @@
   <meta http-equiv='X-UA-Compatible' content='ie=edge' />
   <title>Explore 2k18</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.5/jquery.pagepiling.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
+    crossorigin="anonymous">
   <style>
+    iframe {
+      height: 90%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      margin: auto ;
+      left: 0;
+      border:none;
+    }
     body {
       display: flex;
     }
@@ -86,7 +97,7 @@
       color: #222;
       -webkit-transform: translateZ(-2px) rotateX(180deg);
       transform: translateZ(-2px) rotateX(180deg);
-      overflow: hidden;
+      /* overflow: hidden; */
       -webkit-transition: -webkit-box-shadow 0.8s ease;
       transition: -webkit-box-shadow 0.8s ease;
       transition: box-shadow 0.8s ease;
@@ -261,11 +272,163 @@
       transform: rotate(2deg);
     }
   </style>
+
+  <style>
+    form {
+    display: block;
+    margin-top: 0em;
+}
+.section-contact form {
+    margin-bottom: 30px !important;
+}
+
+body, form, fieldset, legend, input, select, textarea, button {
+    margin: 0;
+}
+
+input {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+input[type="radio"] {
+    -webkit-appearance: radio;
+    -moz-appearance: radio;
+}
+
+fieldset {
+    display: block;
+    -webkit-margin-start: 2px;
+    -webkit-margin-end: 2px;
+    -webkit-padding-before: 0.35em;
+    -webkit-padding-start: 0.75em;
+    -webkit-padding-end: 0.75em;
+    -webkit-padding-after: 0.625em;
+    min-width: -webkit-min-content;
+    border-width: 2px;
+    border-style: groove;
+    border-color: threedface;
+    border-image: initial;
+}
+fieldset {
+    border: 0;
+    padding: 0;
+}
+.section-contact input, .section-contact textarea, .comment-reply input, .comment-reply textarea {
+    margin-bottom: 10px;
+}
+input[type=text], input[type=password], input[type=email], input[type=search], input[type=tel], textarea {
+    font-weight: 400;
+    width: 100%;
+    padding: 8px;
+    color: #383A3C;
+    border: none;
+    -webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.4), inset 0 1px 0 rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 1px 0 rgba(255,255,255,0.4), inset 0 1px 0 rgba(0,0,0,0.2);
+    -o-box-shadow: 0 1px 0 rgba(255,255,255,0.4), inset 0 1px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.4), inset 0 1px 0 rgba(0,0,0,0.2);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+}
+input {
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    user-select: text;
+    cursor: auto;
+    padding: 1px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+}
+
+input, textarea, keygen, select, button {
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em 0em 0em 0em;
+    font: 13.3333px Arial;
+}
+
+input, textarea, keygen, select, button, meter, progress {
+    -webkit-writing-mode: horizontal-tb;
+}
+.hentry-content h1, .hentry-content h2, .hentry-content h3, .hentry-content h4, .hentry-content h5, .hentry-content h6, .section-subtitle, .blog-list h4.post-meta, .single h4.post-meta, .widget h3, .comments h3, .comments h4, .comment-author, .more-posts {
+    font-family: "Oswald", serif;
+}
+
+.section-subtitle {
+    text-transform: uppercase;
+}
+.section-title, .section-subtitle, .single .post-title, .page .post-title {
+    text-align: center;
+}
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    cursor: pointer;
+    -webkit-appearance: button;
+}
+.button, .form-submit input[type="submit"], .nav-links a {
+    display: inline-block;
+    line-height: 1.8;
+    font-weight: 700;
+    padding: 4px 16px;
+    margin-bottom: 4px;
+    color: #383A3C !important;
+    background-color: #FCFAF7;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+    -o-box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.text-center, .button {
+    text-align: center;
+}
+.button, .form-submit input[type="submit"], .nav-links a {
+    border: 0;
+    padding: 1em 3em;
+    background-color: #e74b3c;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+}
+body, input, textarea, .blog-list .post-title h3, .blog-list h4.post-meta, .portfolio-list ul li h3, .single h2.post-title, .page h2.post-title {
+    font-family: "roboto_slabregular", sans-serif;
+}
+button, input, select, textarea {
+    font-size: 100%;
+    vertical-align: baseline;
+}
+button, input {
+    line-height: normal;
+}
+
+body, form, fieldset, legend, input, select, textarea, button {
+    margin: 0;
+}
+
+input[type="button"], input[type="submit"], input[type="reset"] {
+    -webkit-appearance: push-button;
+    user-select: none;
+    white-space: pre;
+}
+  </style>
 </head>
 
 <body>
   <div id="pagepiling">
-    <div class="section" id="particles">
+    <div  class="section" id="particles">
       <div id='intro'>
         <img src="img/Explore.png" alt="" class="logo">
         <br/>
@@ -277,10 +440,21 @@
 
         <div class="btn">
           <div class="btn-back">
-            <p>Are you sure you want to do that?</p>
-            <button class="yes">Yes</button>
-            <button class="no">No</button>
+            <!-- <form name="submit-to-google-sheet">
+              <input name="email" type="email" placeholder="Email" required>
+              <button type="submit">Send</button>
+            </form> -->
+            <form name="submit-to-google-sheet" class="pure-form pure-form-stacked">
+              <fieldset>
+
+                <label for="email">Email</label>
+                <input name='email' id="email" type="email" placeholder="Email">
+                <button type="submit" class="pure-button pure-button-primary">Submit</button>
+                
+              </fieldset>
+            </form>
           </div>
+          
           <div class="btn-front">
             <svg class="liquid-button" data-text="Register" data-force-factor="0.1" data-layer-1-viscosity="0.5" data-layer-2-viscosity="0.4" data-layer-1-mouse-force="400" data-layer-2-mouse-force="500" data-layer-1-force-limit="1" data-layer-2-force-limit="2" data-color1="#4DE7BF"
               data-color2="#0A3FC7" data-color3="#2A62F4"></svg>
@@ -517,10 +691,10 @@
         </div>
       </div>
     </div>
-    <div class="section">
-      Section 3
+    <div class="section" id="teams">
+        <iframe src="hello.html" frameborder="0" allowtransparency="true" seamless="seamless"></iframe> 
     </div>
-    <div class="section">Section 4</div>
+    <div class="section">Section 4 </div>
   </div>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.5/jquery.pagepiling.min.js"></script>
@@ -562,6 +736,17 @@
     });
   </script>
   <script type="text/javascript">
+
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyvj1efVV804qQWeMWmjfdb0so7X4cHBeX_qUITuWXrd7Gex-kg/exec'
+      const form = document.forms['submit-to-google-sheet']
+
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+          .then(response => console.log('Success!', response))
+          .catch(error => console.error('Error!', error.message))
+      })
+
     const LiquidButton = class LiquidButton {
       constructor(svg) {
         const options = svg.dataset;
@@ -877,6 +1062,7 @@
       btnNo = btn.querySelector('.btn-back .no');
 
     btnFront.addEventListener('click', function(event) {
+      console.log("Found you baby");
       btnback.style.display = 'block';
       var mx = event.clientX - btn.offsetLeft,
         my = event.clientY - btn.offsetTop;
@@ -986,6 +1172,402 @@
     }
 
     setInterval(updateGradient, 2);
+  </script>
+
+  <script>
+        $(document).ready(function() {
+          function blinker() {
+            $('.blink-me').fadeOut(500);
+            $('.blink-me').fadeIn(500);
+          }
+                $(function() {
+          $('.typed-strings').typeIt({
+            speed: 100,
+            autoStart: true,
+            loop: true
+          });
+                    setInterval(blinker, 1000);
+    });
+});
+    </script>
+        
+        <!--<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js'></script>-->
+        
+        <script>
+      // can be updated to fetch JSON data from the server
+                    var member_ct_arr = {
+        "1001": [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+      "1002": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],
+      "1003": [1],
+      "1004": [4],
+      "1005": [4],
+      "1006": [2],
+      "1007": [1],
+      "1008": [4],
+      "1009": [1],
+      "1010": [1],
+      "1011": [1],
+      "1012": [5],
+      "1013": [1],
+      "1014": [1],
+      "1015": [1],
+      "1016": [1],
+      "1017": [1],
+      "1018": [1]
+  };
+uery time
+  var current_fs, next_fs, previous_fs; //fieldsets
+  var left, opacity, scale; //fieldset properties which we will animate
+  var animating; //flag to prevent quick multi-click glitches
+  var members = 0;
+              $(document).on("click", "#next_1", function() {
+                        
+                        if (validateForm1()) {
+                            
+                            if (members != 1) {
+        animate_to_2(this);
+      } else {
+        // go to step 3      
+
+        animate_to_3(this, $(this).parent().next().next());
+      }
+  }
+});
+              function animate_to_2(thise) {
+                        if (animating) return false;
+      animating = true;
+current_fs = $(thise).parent();
+      next_fs = $(thise).parent().next();
+//activate next step on progressbar using the index of next_fs
+      $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+//show the next fieldset
+      next_fs.show();
+      //hide the current fieldset with style
+                        current_fs.animate({
+        opacity: 0
+                        }, {
+        step: function(now, mx) {
+        //as the opacity of current_fs reduces to 0 - stored in "now"
+        //1. scale current_fs down to 80%
+        scale = 1 - (1 - now) * 0.2;
+      //2. bring next_fs from the right(50%)
+      left = (now * 90) + "%";
+      //3. increase opacity of next_fs to 1 as it moves in
+      opacity = 1 - now;
+                                current_fs.css({
+        'transform': 'scale(' + scale + ')',
+      'position': 'absolute'
+  });
+                                next_fs.css({
+        'left': left,
+      'opacity': opacity
+  });
+},
+duration: 0,
+                            complete: function() {
+        current_fs.hide();
+      animating = false;
+  },
+  //this comes from the custom easing plugin
+  easing: 'easeInOutBack'
+});
+// get number of team members
+getElementById('member_select');
+var sel = $('#member_select').val();
+ptions[sel.selectedIndex].text;
+var total = sel;
+var countCl = $('.spnClass').length;
+ if((total-1)<countCl){  
+                          for(jj=total;jj<=countCl;jj++){
+        $("#spanId" + jj).remove();
+      }
+      return false;
+    }
+   riate dynamic elements to fetch username, email id, contact
+    ii=1;
+                        if(total>countCl){
+        ii = countCl + 1;
+      }
+        or (var i = ii; i < total; i++) {
+        $("#g-value-mem").append(
+          "<span class='spnClass' id='spanId" + i + "'><input type='text' name='teamName" + i + "' id='teamName" + i + "' placeholder='Member " + i + "' class='full-member' />" + "<input type='text' name='teamPhoneNumber" + i + "' id='teamPhoneNumber" + i + "' placeholder='Mobile Number (10 Digits Only)' class='full-member'/>" + "<input type='email' name='teamemailId" + i + "' id='teamemailId" + i + "' placeholder='Email' class='full-member' /></span>");
+      }
+  }
+              $(document).on("click", "#previous1", function() {
+        $("#fieldSet_2").css('opacity', '0');
+      $("#fieldSet_1").css('width', '90%');
+      $("#fieldSet_1").css('opacity', '1');
+      $("#fieldSet_1").css("display", "block");
+      $("#fieldSet_1").css("left", "0");
+      $("#fieldSet_1").css("position", "relative");
+      $("#fieldSet_1").css("transform", "scale(1)");
+      animating = false;
+});
+  $(document).on("click", "#previous2", function() {
+        $("#fieldSet_3").css('opacity', '0');
+      if($("#member_select").val()>1){
+        $("#fieldSet_2").css('opacity', '1');
+      $("#fieldSet_2").css('width', '90%');
+      $("#fieldSet_2").css("display", "block");
+      $("#fieldSet_2").css("left", "0");
+      $("#fieldSet_2").css("position", "relative");
+      $("#fieldSet_2").css("transform", "scale(1)");
+      animating = false;
+  }
+                          else{
+        $("#fieldSet_1").css('opacity', '1');
+      $("#fieldSet_1").css('width', '90%');
+      $("#fieldSet_1").css("display", "block");
+      $("#fieldSet_1").css("left", "0");
+      $("#fieldSet_1").css("position", "relative");
+      $("#fieldSet_1").css("transform", "scale(1)");
+      animating = false;
+  }
+});
+nction() {    
+                        if (validateForm2()) {
+        document.getElementById('member_error').style.display = 'none';
+      animate_to_3(this, $(this).parent().next());
+  }
+                        else {
+        document.getElementById('member_error').style.display = 'block';
+      }
+  });
+              function animate_to_3(thise, nexte) {  
+                        if (animating) return false;
+      animating = true;
+current_fs = $(thise).parent();
+      next_fs = nexte;
+//activate next step on progressbar using the index of next_fs
+      $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+//show the next fieldset
+      next_fs.show();
+      //hide the current fieldset with style
+                        current_fs.animate({
+        opacity: 0
+                        }, {
+        step: function(now, mx) {
+        //as the opacity of current_fs reduces to 0 - stored in "now"
+        //1. scale current_fs down to 80%
+        scale = 1 - (1 - now) * 0.2;
+      //2. bring next_fs from the right(50%)
+      left = (now * 90) + "%";
+      //3. increase opacity of next_fs to 1 as it moves in
+      opacity = 1 - now;
+                                current_fs.css({
+        'transform': 'scale(' + scale + ')',
+      'position': 'absolute'
+  });
+                                next_fs.css({
+        'left': left,
+      'opacity': opacity
+  });
+},
+duration: 0,
+                            complete: function() {
+        current_fs.hide();
+      animating = false;
+  },
+  //this comes from the custom easing plugin
+  easing: 'easeInOutBack'
+});
+}
+             /* $(document).on("click", ".previous", function() {
+                        if (animating) return false;
+      animating = true;
+ctr--;
+      current_fs = $(this).parent();
+      previous_fs = $(this).parent().prev();
+//de-activate current step on progressbar
+      $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+//show the previous fieldset
+      previous_fs.show();
+      //hide the current fieldset with style
+                        current_fs.animate({
+        opacity: 0
+                        }, {
+        step: function(now, mx) {
+        //as the opacity of current_fs reduces to 0 - stored in "now"
+        //1. scale previous_fs from 80% to 100%
+        scale = 0.8; + (1 - now) * 0.2;
+      //2. take current_fs to the right(50%) - from 0%
+      left = ((1 - now) * 50) + "%";
+      //3. increase opacity of previous_fs to 1 as it moves in
+      opacity = 1 - now;
+                                current_fs.css({
+        'left': left
+  });
+                                previous_fs.css({
+        'transform': 'scale(' + scale + ')',
+      'opacity': opacity
+  });
+},
+duration: 0,
+                            complete: function() {
+        current_fs.hide();
+      animating = false;
+  },
+  //this comes from the custom easing plugin
+  easing: 'easeInOutBack'
+});
+});    */
+              $(".submit").click(function() {
+                        return false;
+  })
+              function nvalidation() {
+                        var name = document.getElementById('name').value;
+      var chars = /^[a-zA-Z-, ]+$/;
+                        if (!name.match(chars)) {
+        document.getElementById('name_error').style.display = "block";
+      return false
+                        } else {
+        document.getElementById('name_error').style.display = "none";
+      return true
+  }
+}
+              function fnvalidation() {
+                        var fname = document.getElementById('fname').value;
+      var chars = /^[a-zA-Z-, ]+$/;
+                        if (!fname.match(chars)) {
+        document.getElementById('fname_error').style.display = "block";
+      return false
+                        } else {
+        document.getElementById('fname_error').style.display = "none";
+      return true
+  }
+}
+              function cnvalidation() {
+                        var cname = document.getElementById('college').value;
+      var chars = /^[a-zA-Z-, ]+$/;
+                        if (!cname.match(chars)) {
+        document.getElementById('cname_error').style.display = "block";
+      return false
+                        } else {
+        document.getElementById('cname_error').style.display = "none";
+      return true
+  }
+}
+              function email_val() {
+                        var str = document.getElementById('email').value;
+      var indexofat = str.lastIndexOf('@');
+      var indexofdot = str.lastIndexOf('.');
+                  if (indexofat < 0) {
+        document.getElementById('email_error').style.display = "Block";
+      return false
+                        } else if (indexofat > indexofdot) {
+        document.getElementById('email_error').style.display = "Block";
+      return false
+                        } else {
+        document.getElementById('email_error').style.display = "None";
+      return true
+  }
+}
+              function mob_val() {
+                        var mob = document.getElementById('phone').value;
+      var chars = /^[0-9]+$/;
+                        if ((mob.length < 10) || (mob.length > 10)) {
+        document.getElementById('mob_error').style.display = "Block";
+      return false
+                        } else if (!mob.match(chars)) {
+        document.getElementById('mob_error').style.display = "Block";
+      return false
+                        } else {
+        document.getElementById('mob_error').style.display = "None";
+      return true
+  }
+}
+              function event_validation() {
+                        var events = document.getElementById("evento");
+      var event_val = events.options[events.selectedIndex].value;
+       if (event_val === "") {
+        document.getElementById('event_error').style.display = "Block";
+      document.getElementById('member_ct_outer').style.display = "none";
+      return false
+                        } else {
+        document.getElementById('event_error').style.display = "none";
+      document.getElementById('member_ct_outer').style.display = "Block";
+      var mySelect = document.getElementById('member_select');
+      mySelect.innerHTML="";
+     arr[event_val];
+                            if (members.length == 1 && members[0] === 1) {
+                                var newOption = document.createElement("option");
+      newOption.text = members[0];
+      newOption.value = members[0];
+      mySelect.add(newOption, 0);
+                            } else {
+                                for (var i = 0; i < members.length; i++) {
+                                    var newOption = document.createElement("option");
+      newOption.text = members[i];
+      newOption.value = members[i];
+      mySelect.add(newOption, i);
+  }
+}
+return true
+}
+}
+              function validateForm1() {
+                        var check = (nvalidation() && fnvalidation() && email_val() && mob_val() && cnvalidation()) ? true : false;
+      return check;
+  }
+              function acc_vis() {
+                        var accomodation = document.getElementsByName('accomodation').value;
+                  if (document.getElementById('acc1').checked == true) {
+        document.getElementById('days').style.display = "Block";
+      document.getElementById('people').style.display = "Block";
+                        } else {
+        document.getElementById('days').style.display = "None";
+      document.getElementById('people').style.display = "None";
+  }
+}
+              function validateForm2() { 
+                        var mem_sel = $("#member_select").val().trim();
+                        if (mem_sel == 1) {
+                            return true;
+                        } else {
+                            // do cool dynamic validation stuff here
+                            /*for(var i = 1; i < mem_sel; i++) {
+                                var name_id = 'teamName' + i;
+                                var mail_id = 'teamemailId' + i;
+                                var cell_id = 'teamPhoneNumber' + i;
+        
+                                var name = document.getElementById(name_id).value;
+                                        
+                                var chars = /^[a-zA-Z-, ]+$/; 
+                                if (!name.match(chars)) {  
+                                    $("#"+name_id).focus();
+                                    return false
+                                }
+                                
+                                var mob = document.getElementById(cell_id).value;
+                                var chars = /^[0-9]+$/;
+                                if ((mob.length < 10) || (mob.length > 10)) {
+                                    $("#"+cell_id).focus();
+                                    return false
+                                } else if (!mob.match(chars)) {
+                                    $("#"+cell_id).focus(); 
+                                    return false
+                                }
+        
+                                var str = document.getElementById(mail_id).value;
+                                var indexofat = str.lastIndexOf('@');
+                                var indexofdot = str.lastIndexOf('.');
+        
+                                if (indexofat < 0) {
+                                    $("#"+mail_id).focus(); 
+                                    return false
+                                } else if (indexofat > indexofdot) {
+                                    $("#"+mail_id).focus(); 
+                                    return false
+                                }
+                            }
+        					*/
+                            return true;
+  }
+}
+              function validateForm() {
+                        var check = (nvalidation() && fnvalidation() && email_val() && mob_val()) ? true : false;
+      return check;
+  }
   </script>
 </body>
 
