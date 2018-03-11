@@ -8,6 +8,15 @@
   <title>Explore 2k18</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.5/jquery.pagepiling.min.css" />
   <style>
+    iframe {
+      height: 90%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      margin: auto ;
+      left: 0;
+      border:none;
+    }
     body {
       display: flex;
     }
@@ -88,7 +97,7 @@
       color: #222;
       -webkit-transform: translateZ(-2px) rotateX(180deg);
       transform: translateZ(-2px) rotateX(180deg);
-      overflow: hidden;
+      /* overflow: hidden; */
       -webkit-transition: -webkit-box-shadow 0.8s ease;
       transition: -webkit-box-shadow 0.8s ease;
       transition: box-shadow 0.8s ease;
@@ -449,15 +458,17 @@
       }
     }
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.css" />
 </head>
 
 <body>
   <div id="pagepiling">
-    <div class="section">
+
+    <div  class="section" id="particles">
+
       <video autoplay loop id="myVideo">
         <source src="vid/intro.mp4" type="video/mp4">
       </video>
+
       <div id='intro'>
         <img src="img/Explore.png" alt="" class="logo" id="logo">
         <br/>
@@ -469,10 +480,21 @@
 
         <div class="btn">
           <div class="btn-back">
-            <p>Are you sure you want to do that?</p>
-            <button class="yes">Yes</button>
-            <button class="no">No</button>
+            <!-- <form name="submit-to-google-sheet">
+              <input name="email" type="email" placeholder="Email" required>
+              <button type="submit">Send</button>
+            </form> -->
+            <form name="submit-to-google-sheet" class="pure-form pure-form-stacked">
+              <fieldset>
+
+                <label for="email">Email</label>
+                <input name='email' id="email" type="email" placeholder="Email">
+                <button type="submit" class="pure-button pure-button-primary">Submit</button>
+                
+              </fieldset>
+            </form>
           </div>
+          
           <div class="btn-front">
             <svg class="liquid-button" data-text="Register" data-force-factor="0.1" data-layer-1-viscosity="0.5" data-layer-2-viscosity="0.4" data-layer-1-mouse-force="400" data-layer-2-mouse-force="500" data-layer-1-force-limit="1" data-layer-2-force-limit="2" data-color1="#4DE7BF"
               data-color2="#0A3FC7" data-color3="#2A62F4"></svg>
@@ -607,9 +629,9 @@
       </div>
     </div>
     <div class="section" id="gradient">
-      Section 3
+        <iframe src="hello.html" frameborder="0" allowtransparency="true" seamless="seamless"></iframe> 
     </div>
-    <div class="section">Section 4</div>
+    <div class="section">Section 4 </div>
   </div>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.5/jquery.pagepiling.min.js"></script>
@@ -646,6 +668,17 @@
   <script type='text/javascript' src='./js/jquery.particleground.min.js'></script>
   </script>
   <script type="text/javascript">
+
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyvj1efVV804qQWeMWmjfdb0so7X4cHBeX_qUITuWXrd7Gex-kg/exec'
+      const form = document.forms['submit-to-google-sheet']
+
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+          .then(response => console.log('Success!', response))
+          .catch(error => console.error('Error!', error.message))
+      })
+
     const LiquidButton = class LiquidButton {
       constructor(svg) {
         const options = svg.dataset;
@@ -961,6 +994,7 @@
       btnNo = btn.querySelector('.btn-back .no');
 
     btnFront.addEventListener('click', function(event) {
+
       var logo = document.getElementById('logo');
       logo.style.display = 'none';
       btnback.style.display = 'block';
@@ -1078,10 +1112,6 @@
     var video = document.getElementById("myVideo");
     window.onload = () => video.play();
     setInterval(updateGradient, 2);
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.js"></script>
-  <script>
-    AOS.init();
   </script>
 </body>
 

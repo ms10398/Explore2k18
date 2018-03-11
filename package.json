@@ -18,7 +18,9 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "ejs": "^2.5.7",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "google-auth-library": "0.*",
+    "googleapis": "25.*"
   },
   "homepage": "https://github.com/ms10398/Explore2k18#readme",
   "devDependencies": {
