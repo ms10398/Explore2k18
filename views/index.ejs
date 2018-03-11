@@ -16,6 +16,8 @@
       position: fixed;
       height: 100%;
       width: 100%;
+      overflow: hidden;
+      z-index: 1;
     }
 
     #intro {
@@ -260,14 +262,204 @@
       top: -300px;
       transform: rotate(2deg);
     }
+
+    #myVideo {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -100;
+    }
+
+    .wrapper {
+      width: 90%;
+      margin: 0 auto;
+      max-width: 80rem;
+      z-index: 4;
+    }
+
+    .cols {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+
+    .col {
+      width: calc(25% - 2rem);
+      margin: 1rem;
+      cursor: pointer;
+    }
+
+    .container {
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      -webkit-perspective: 1000px;
+      perspective: 1000px;
+    }
+
+    .front,
+    .back {
+      background-size: cover;
+      background-position: center;
+      -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      text-align: center;
+      min-height: 280px;
+      height: auto;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 1.5rem;
+    }
+
+    .back {
+      background: #cedce7;
+      background: -webkit-linear-gradient(45deg, #cedce7 0%, #596a72 100%);
+      background: -o-linear-gradient(45deg, #cedce7 0%, #596a72 100%);
+      background: linear-gradient(45deg, #cedce7 0%, #596a72 100%);
+    }
+
+    .front:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      content: '';
+      display: block;
+      opacity: .6;
+      background-color: #000;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 10px;
+    }
+
+    .container:hover .front,
+    .container:hover .back {
+      -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    }
+
+    .back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    .inner {
+      -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
+      transform: translateY(-50%) translateZ(60px) scale(0.94);
+      top: 50%;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      padding: 2rem;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      outline: 1px solid transparent;
+      -webkit-perspective: inherit;
+      perspective: inherit;
+      z-index: 2;
+    }
+
+    .container .back {
+      -webkit-transform: rotateY(180deg);
+      transform: rotateY(180deg);
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+    }
+
+    .container .front {
+      -webkit-transform: rotateY(0deg);
+      transform: rotateY(0deg);
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+    }
+
+    .container:hover .back {
+      -webkit-transform: rotateY(0deg);
+      transform: rotateY(0deg);
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+    }
+
+    .container:hover .front {
+      -webkit-transform: rotateY(-180deg);
+      transform: rotateY(-180deg);
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+    }
+
+    .front .inner p {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .front .inner p:after {
+      content: '';
+      width: 4rem;
+      height: 2px;
+      position: absolute;
+      background: #C6D4DF;
+      display: block;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      bottom: -.75rem;
+    }
+
+    .front .inner span {
+      color: rgba(255, 255, 255, 0.7);
+      font-family: 'Montserrat';
+      font-weight: 300;
+    }
+
+    @media screen and (max-width: 64rem) {
+      .col {
+        width: calc(33.333333% - 2rem);
+      }
+    }
+
+    @media screen and (max-width: 48rem) {
+      .col {
+        width: calc(50% - 2rem);
+      }
+    }
+
+    @media screen and (max-width: 32rem) {
+      .col {
+        width: 100%;
+        margin: 0 0 2rem 0;
+      }
+    }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.css" />
 </head>
 
 <body>
   <div id="pagepiling">
-    <div class="section" id="particles">
+    <div class="section">
+      <video autoplay loop id="myVideo">
+        <source src="vid/intro.mp4" type="video/mp4">
+      </video>
       <div id='intro'>
-        <img src="img/Explore.png" alt="" class="logo">
+        <img src="img/Explore.png" alt="" class="logo" id="logo">
         <br/>
         <br/>
         <br/>
@@ -288,236 +480,133 @@
         </div>
       </div>
     </div>
-    <div class="section" id="gradient">
+    <div class="section" style="background: url(img/back.jpg)" >
       <div class="wrapper">
-        <div class="tile job-bucket">
-          <div class="front">
-            <div class="contents">
-              <img src="http://imgsg.jobing.com/company/images/142939/t/taxi-drivers.jpg" />
-              <h3>Taxi Drivers</h3>
-              <p>"Driving here at Yellow Cab gives me the freedom and flexibility to make money at my pace. Being my own boss allows me to work harder, the more I work the more I can bring in."</p>
-              <br>
-              <a href="#">View Jobs</a>
+        <div class="cols">
+          <div class="col" data-aos="fade-up" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+              <div class="front" style="background-image: url(https://unsplash.it/500/500/)">
+                <div class="inner">
+                  <p>Diligord</p>
+                  <span>Lorem ipsum</span>
+                </div>
+              </div>
+              <div class="back">
+                <div class="inner">
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="back">
-            <h3>Open Jobs</h3>
-            <a href="#">Experienced Taxi Driver</a>
-            <a href="#">Taxi Driver - East Valley</a>
-            <a href="#">Taxi Driver - West Valley</a>
-            <a href="#">Taxi Driver - Central Valley</a>
-            <a href="#">View All Jobs</a>
-          </div>
-        </div>
-        <div class="tile job-bucket">
-          <div class="front">
-            <div class="contents">
-              <img src="http://imgsg.jobing.com/company/images/142939/t/taxi-drivers.jpg" />
-              <h3>Taxi Drivers</h3>
-              <p>"Driving here at Yellow Cab gives me the freedom and flexibility to make money at my pace. Being my own boss allows me to work harder, the more I work the more I can bring in."</p>
-              <br>
-              <a href="#">View Jobs</a>
+          <div class="col" data-aos="fade-up" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+              <div class="front" style="url(https://unsplash.it/511/511/)">
+                <div class="inner">
+                  <p>Rocogged</p>
+                  <span>Lorem ipsum</span>
+                </div>
+              </div>
+              <div class="back">
+                <div class="inner">
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="back">
-            <h3>Open Jobs</h3>
-            <a href="#">Experienced Taxi Driver</a>
-            <a href="#">Taxi Driver - East Valley</a>
-            <a href="#">Taxi Driver - West Valley</a>
-            <a href="#">Taxi Driver - Central Valley</a>
-            <a href="#">View All Jobs</a>
-          </div>
-        </div>
-        <div class="tile job-bucket">
-          <div class="front">
-            <div class="contents">
-              <img src="http://imgsg.jobing.com/company/images/142939/t/taxi-drivers.jpg" />
-              <h3>Taxi Drivers</h3>
-              <p>"Driving here at Yellow Cab gives me the freedom and flexibility to make money at my pace. Being my own boss allows me to work harder, the more I work the more I can bring in."</p>
-              <br>
-              <a href="#">View Jobs</a>
+          <div class="col" data-aos="fade-up" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+              <div class="front" style="background-image: url(https://unsplash.it/502/502/)">
+                <div class="inner">
+                  <p>Strizzes</p>
+                  <span>Lorem ipsum</span>
+                </div>
+              </div>
+              <div class="back">
+                <div class="inner">
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="back">
-            <h3>Open Jobs</h3>
-            <a href="#">Experienced Taxi Driver</a>
-            <a href="#">Taxi Driver - East Valley</a>
-            <a href="#">Taxi Driver - West Valley</a>
-            <a href="#">Taxi Driver - Central Valley</a>
-            <a href="#">View All Jobs</a>
-          </div>
-        </div>
-        <div class="tile job-bucket">
-          <div class="front">
-            <div class="contents">
-              <img src="http://imgsg.jobing.com/company/images/142939/t/taxi-drivers.jpg" />
-              <h3>Taxi Drivers</h3>
-              <p>"Driving here at Yellow Cab gives me the freedom and flexibility to make money at my pace. Being my own boss allows me to work harder, the more I work the more I can bring in."</p>
-              <br>
-              <a href="#">View Jobs</a>
+          <div class="col" data-aos="fade-up" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+              <div class="front" style="background-image: url(https://unsplash.it/503/503/)">
+                <div class="inner">
+                  <p>Clossyo</p>
+                  <span>Lorem ipsum</span>
+                </div>
+              </div>
+              <div class="back">
+                <div class="inner">
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="back">
-            <h3>Open Jobs</h3>
-            <a href="#">Experienced Taxi Driver</a>
-            <a href="#">Taxi Driver - East Valley</a>
-            <a href="#">Taxi Driver - West Valley</a>
-            <a href="#">Taxi Driver - Central Valley</a>
-            <a href="#">View All Jobs</a>
-          </div>
-        </div>
-        <div class="tile job-bucket">
-          <div class="front">
-            <div class="contents">
-              <img src="http://imgsg.jobing.com/company/images/142939/t/taxi-drivers.jpg" />
-              <h3>Taxi Drivers</h3>
-              <p>"Driving here at Yellow Cab gives me the freedom and flexibility to make money at my pace. Being my own boss allows me to work harder, the more I work the more I can bring in."</p>
-              <br>
-              <a href="#">View Jobs</a>
+          <div class="col" data-aos="fade-up" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+              <div class="front" style="background-image: url(https://unsplash.it/504/504/">
+                <div class="inner">
+                  <p>Rendann</p>
+                  <span>Lorem ipsum</span>
+                </div>
+              </div>
+              <div class="back">
+                <div class="inner">
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="back">
-            <h3>Open Jobs</h3>
-            <a href="#">Experienced Taxi Driver</a>
-            <a href="#">Taxi Driver - East Valley</a>
-            <a href="#">Taxi Driver - West Valley</a>
-            <a href="#">Taxi Driver - Central Valley</a>
-            <a href="#">View All Jobs</a>
-          </div>
-        </div>
-        <div class="tile job-bucket">
-          <div class="front">
-            <div class="contents">
-              <img src="http://imgsg.jobing.com/company/images/142939/t/taxi-drivers.jpg" />
-              <h3>Taxi Drivers</h3>
-              <p>"Driving here at Yellow Cab gives me the freedom and flexibility to make money at my pace. Being my own boss allows me to work harder, the more I work the more I can bring in."</p>
-              <br>
-              <a href="#">View Jobs</a>
+          <div class="col" data-aos="fade-up" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+              <div class="front" style="background-image: url(https://unsplash.it/505/505/)">
+                <div class="inner">
+                  <p>Reflupper</p>
+                  <span>Lorem ipsum</span>
+                </div>
+              </div>
+              <div class="back">
+                <div class="inner">
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="back">
-            <h3>Open Jobs</h3>
-            <a href="#">Experienced Taxi Driver</a>
-            <a href="#">Taxi Driver - East Valley</a>
-            <a href="#">Taxi Driver - West Valley</a>
-            <a href="#">Taxi Driver - Central Valley</a>
-            <a href="#">View All Jobs</a>
-          </div>
-        </div>
-        <div class="tile job-bucket">
-          <div class="front">
-            <div class="contents">
-              <img src="http://imgsg.jobing.com/company/images/142939/t/taxi-drivers.jpg" />
-              <h3>Taxi Drivers</h3>
-              <p>"Driving here at Yellow Cab gives me the freedom and flexibility to make money at my pace. Being my own boss allows me to work harder, the more I work the more I can bring in."</p>
-              <br>
-              <a href="#">View Jobs</a>
+          <div class="col" data-aos="fade-up" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+              <div class="front" style="background-image: url(https://unsplash.it/506/506/)">
+                <div class="inner">
+                  <p>Acirassi</p>
+                  <span>Lorem ipsum</span>
+                </div>
+              </div>
+              <div class="back">
+                <div class="inner">
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="back">
-            <h3>Open Jobs</h3>
-            <a href="#">Experienced Taxi Driver</a>
-            <a href="#">Taxi Driver - East Valley</a>
-            <a href="#">Taxi Driver - West Valley</a>
-            <a href="#">Taxi Driver - Central Valley</a>
-            <a href="#">View All Jobs</a>
-          </div>
-        </div>
-        <div class="tile job-bucket">
-          <div class="front">
-            <div class="contents">
-              <img src="http://imgsg.jobing.com/company/images/142939/t/taxi-drivers.jpg" />
-              <h3>Taxi Drivers</h3>
-              <p>"Driving here at Yellow Cab gives me the freedom and flexibility to make money at my pace. Being my own boss allows me to work harder, the more I work the more I can bring in."</p>
-              <br>
-              <a href="#">View Jobs</a>
+          <div class="col" data-aos="fade-up" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+              <div class="front" style="background-image: url(https://unsplash.it/508/508/)">
+                <div class="inner">
+                  <p>Sohanidd</p>
+                  <span>Lorem ipsum</span>
+                </div>
+              </div>
+              <div class="back">
+                <div class="inner">
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="back">
-            <h3>Open Jobs</h3>
-            <a href="#">Experienced Taxi Driver</a>
-            <a href="#">Taxi Driver - East Valley</a>
-            <a href="#">Taxi Driver - West Valley</a>
-            <a href="#">Taxi Driver - Central Valley</a>
-            <a href="#">View All Jobs</a>
-          </div>
-        </div>
-        <div class="tile job-bucket">
-          <div class="front">
-            <div class="contents">
-              <img src="http://imgsg.jobing.com/company/images/142939/t/taxi-drivers.jpg" />
-              <h3>Taxi Drivers</h3>
-              <p>"Driving here at Yellow Cab gives me the freedom and flexibility to make money at my pace. Being my own boss allows me to work harder, the more I work the more I can bring in."</p>
-              <br>
-              <a href="#">View Jobs</a>
-            </div>
-          </div>
-          <div class="back">
-            <h3>Open Jobs</h3>
-            <a href="#">Experienced Taxi Driver</a>
-            <a href="#">Taxi Driver - East Valley</a>
-            <a href="#">Taxi Driver - West Valley</a>
-            <a href="#">Taxi Driver - Central Valley</a>
-            <a href="#">View All Jobs</a>
-          </div>
-        </div>
-        <div class="tile job-bucket">
-          <div class="front">
-            <div class="contents">
-              <img src="http://imgsg.jobing.com/company/images/142939/t/taxi-drivers.jpg" />
-              <h3>Taxi Drivers</h3>
-              <p>"Driving here at Yellow Cab gives me the freedom and flexibility to make money at my pace. Being my own boss allows me to work harder, the more I work the more I can bring in."</p>
-              <br>
-              <a href="#">View Jobs</a>
-            </div>
-          </div>
-          <div class="back">
-            <h3>Open Jobs</h3>
-            <a href="#">Experienced Taxi Driver</a>
-            <a href="#">Taxi Driver - East Valley</a>
-            <a href="#">Taxi Driver - West Valley</a>
-            <a href="#">Taxi Driver - Central Valley</a>
-            <a href="#">View All Jobs</a>
-          </div>
-        </div>
-        <div class="tile job-bucket">
-          <div class="front">
-            <div class="contents">
-              <img src="http://imgsg.jobing.com/company/images/142939/t/sedan-drivers.jpg" />
-              <h3>Sedan Drivers</h3>
-              <p>"Being able to offer a higher level of service, wearing a black suit and tie helps make me stand out from the crowd. When I meet someone for the first time I feel they are more relaxed...</p>
-              <br>
-              <a href="#">View Jobs</a>
-            </div>
-          </div>
-          <div class="back">
-            <h3>Open Jobs</h3>
-            <a href="#">Medical Transportation Sedan Drivers Phoenix</a>
-            <a href="#">Sedan Driver - East Valley</a>
-            <a href="#">Sedan Driver - Nights</a>
-            <a href="#">View All Jobs</a>
-          </div>
-        </div>
-        <div class="tile job-bucket">
-          <div class="front">
-            <div class="contents">
-              <img src="http://imgsg.jobing.com/company/images/142939/t/customer-service-representitives.jpg" />
-              <h3>Dispatchers</h3>
-              <p>"Coming to work every day is exciting because I love my job and the people I work with. I enjoy interacting with people and this allows me to do so, but in a safe working environment with flexible shifts.</p>
-              <br>
-              <a href="#">View Jobs</a>
-            </div>
-          </div>
-          <div class="back">
-            <h3>Open Jobs</h3>
-            <a href="#">Customer Service Representatives Phoenix</a>
-            <a href="#">Street Team</a>
-            <a href="#">View All Jobs</a>
           </div>
         </div>
       </div>
     </div>
-    <div class="section">
+    <div class="section" id="gradient">
       Section 3
     </div>
     <div class="section">Section 4</div>
@@ -555,11 +644,6 @@
     });
   </script>
   <script type='text/javascript' src='./js/jquery.particleground.min.js'></script>
-  <script type="text/javascript">
-    particleground(document.getElementById('particles'), {
-      dotColor: '#5cbdaa',
-      lineColor: '#5cbdaa'
-    });
   </script>
   <script type="text/javascript">
     const LiquidButton = class LiquidButton {
@@ -877,6 +961,8 @@
       btnNo = btn.querySelector('.btn-back .no');
 
     btnFront.addEventListener('click', function(event) {
+      var logo = document.getElementById('logo');
+      logo.style.display = 'none';
       btnback.style.display = 'block';
       var mx = event.clientX - btn.offsetLeft,
         my = event.clientY - btn.offsetTop;
@@ -914,13 +1000,18 @@
       btn.classList.add('is-open');
 
     });
-
     btnYes.addEventListener('click', function(event) {
+      var logo = document.getElementById('logo');
+      logo.style.display = 'inline';
+
       btn.classList.remove('is-open');
       btnback.style.display = 'none';
     });
 
     btnNo.addEventListener('click', function(event) {
+      var logo = document.getElementById('logo');
+      logo.style.display = 'inline';
+
       btn.classList.remove('is-open');
       btnback.style.display = 'none';
     });
@@ -984,8 +1075,13 @@
 
       }
     }
-
+    var video = document.getElementById("myVideo");
+    window.onload = () => video.play();
     setInterval(updateGradient, 2);
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.js"></script>
+  <script>
+    AOS.init();
   </script>
 </body>
 
