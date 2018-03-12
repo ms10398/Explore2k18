@@ -9,13 +9,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.5/jquery.pagepiling.min.css" />
   <style>
     iframe {
-      height: 90%;
+      height: 95%;
       width: 100%;
       position: absolute;
       top: 0;
-      margin: auto ;
+      margin: 0 auto;
       left: 0;
       border:none;
+      padding-top: 15px;
     }
     body {
       display: flex;
@@ -282,7 +283,7 @@
     }
 
     .wrapper {
-      width: 90%;
+      width: 80%;
       margin: 0 auto;
       max-width: 80rem;
       z-index: 4;
@@ -297,6 +298,7 @@
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center;
+      width: 100%;
     }
 
     .col {
@@ -308,8 +310,8 @@
     .container {
       -webkit-transform-style: preserve-3d;
       transform-style: preserve-3d;
-      -webkit-perspective: 1000px;
-      perspective: 1000px;
+      -webkit-perspective: 1200px;
+      perspective: 1200px;
     }
 
     .front,
@@ -457,13 +459,401 @@
         margin: 0 0 2rem 0;
       }
     }
+    .section-title {
+            color: #fff0ce;
+        }
+
+        div.separator {
+            margin-bottom: 5px;
+        }
+
+        form input {
+            margin-bottom: 10px;
+            margin-top: 10px;
+            width: 25%;
+            margin: 5px;
+        }
+
+        input.gender #rlabel,
+        div#events #rlabel4,
+        #rlabel5 {
+            float: left;
+        }
+
+        .g-key11 {
+            width: 25%;
+            float: left;
+            padding: 2px;
+            display: inline-block;
+        }
+
+        .g-value11 {
+            width: 75%;
+            display: inline-block;
+        }
+
+        .g-value1,
+        .g-value2 {
+            width: 37.5%;
+            display: inline-block;
+        }
+
+        .g-key22 {
+            width: 45%;
+            float: left;
+            display: inline-block;
+        }
+
+        .g-value22 {
+            width: 55%;
+            display: inline-block;
+        }
+
+        .g-value3,
+        .g-value4 {
+            width: 27.5%;
+            display: inline-block;
+        }
+
+        body {
+            min-width: 356px;
+        }
+
+        .g-key33,
+        .g-key44 {
+            width: 25%;
+            float: left;
+            display: inline-block;
+        }
+
+        .g-value33,
+        .g-value44 {
+            width: 75%;
+            display: inline-block;
+        }
+
+        #events select {
+            width: 100%;
+        }
+
+        .select-style {
+            padding: 2px 0px 2px 2px;
+            margin: 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            overflow: hidden;
+            background: #fff url("/images/arrowdown.gif") no-repeat 95% 50%;
+        }
+
+        .select-style select {
+            cursor: pointer;
+            padding: 5px 8px;
+            width: 100%;
+            border: none;
+            box-sizing: border-box;
+            box-shadow: none;
+            background-color: transparent;
+            background-image: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+
+        .select-style select:focus {
+            outline: none;
+        }
+
+        #rlabel4,
+        #rlabel5 {
+            padding-top: 1.5%;
+            padding-bottom: 1.5%;
+            padding-left: 1.5%;
+            box-sizing: border-box;
+            vertical-align: top;
+        }
+
+        .g-key55 {
+            width: 23%;
+            float: left;
+            display: inline-block;
+            box-sizing: border-box;
+            padding-top: 1.5%;
+            padding-bottom: 1.5%;
+        }
+
+        .g-value5,
+        .g-value6 {
+            width: 25%;
+            display: inline-block;
+            box-sizing: border-box;
+        }
+
+        .g-key66 {
+            width: 24%;
+            display: inline-block;
+            box-sizing: border-box;
+            padding-top: 1.5%;
+            padding-bottom: 1.5%;
+        }
+
+        form #events,
+        .Accomodation,
+        #days {
+            margin-top: 10px;
+        }
+
+        @media only screen and (max-width: 960px) and (min-width: 755px) {
+            .Accomodation {}
+        }
+        /*progressbar*/
+
+        #progressbar {
+            padding: 0;
+            margin-bottom: 30px;
+            overflow: hidden;
+            text-align: center;
+            /*CSS counters to number the steps*/
+            counter-reset: step;
+        }
+
+        #progressbar li {
+            list-style-type: none;
+            color: white;
+            text-transform: uppercase;
+            font-size: 0.7em;
+            width: 33.33%;
+            float: left;
+            position: relative;
+        }
+
+        #progressbar li:before {
+            content: counter(step);
+            counter-increment: step;
+            width: 20px;
+            line-height: 20px;
+            display: block;
+            font-size: 10px;
+            color: #333;
+            background: white;
+            border-radius: 3px;
+            margin: 0 auto 5px auto;
+        }
+        /*progressbar connectors*/
+
+        #progressbar li:after {
+            content: '';
+            width: 100%;
+            height: 2px;
+            background: white;
+            position: absolute;
+            left: -50%;
+            top: 9px;
+            z-index: -1;
+            /*put it behind the numbers*/
+        }
+
+        #progressbar li:first-child:after {
+            /*connector not needed before the first step*/
+            content: none;
+        }
+        /*marking active/completed steps green*/
+        /*The number of the step and the connector before it = green*/
+
+        #progressbar li.active:before,
+        #progressbar li.active:after {
+            background: #000;
+            color: white;
+        }
+        /*form*/
+
+        #retro-mail-form fieldset {
+            background: #4b4f55;
+            border: 0 none;
+            border-radius: 3px;
+            box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.4);
+            padding: 20px 30px;
+            box-sizing: border-box;
+            margin: 0 10%;
+            /*stacking fieldsets above each other*/
+            position: relative;
+        }
+
+        @media only screen and (min-width: 960px) {
+            #retro-mail-form fieldset {
+                width: 90%;
+                margin: 0 auto;
+            }
+        }
+
+        @media only screen and (max-width: 960px) and (min-width: 500px) {
+            #retro-mail-form fieldset {
+                width: 90%;
+                padding: 15px 25px;
+                margin: 0 auto;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            #retro-mail-form fieldset {
+                width: 98%;
+                padding: 10px 20px;
+                margin: 0 auto;
+            }
+        }
+        /*Hide all except first fieldset*/
+
+        #retro-mail-form fieldset:not(:first-of-type) {
+            display: none;
+        }
+
+        #retro-mail-form .action-button:hover,
+        #retro-mail-form .action-button:focus {
+            box-shadow: 0 0 0 2px white, 0 0 0 3px #061b4a;
+        }
+
+        .notice {
+            position: relative;
+            margin: 0.5em;
+            background: #090909;
+            padding: 1em 1em 1em 2em;
+            border-left: 4px solid #DDD;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125);
+        }
+
+        .notice:before {
+            position: absolute;
+            top: 50%;
+            margin-top: -17px;
+            left: -17px;
+            background-color: #DDD;
+            color: #FFF;
+            width: 30px;
+            height: 30px;
+            border-radius: 100%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            font-family: Georgia;
+            text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+        }
+
+        .info {
+            border-color: #0074D9;
+        }
+
+        .info:before {
+            /*content: "i";*/
+            background-color: #0074D9;
+        }
+
+        .success {
+            border-color: #2ECC40;
+        }
+
+        .success:before {
+            /*content: "√";*/
+            background-color: #2ECC40;
+        }
+
+        .warning {
+            border-color: #FFDC00;
+        }
+
+        .warning:before {
+            /*content: "!";*/
+            background-color: #FFDC00;
+        }
+
+        .error {
+            border-color: #FF4136;
+            color: #FF4136;
+        }
+
+        .error:before {
+            /*content: "X";*/
+            background-color: #FF4136;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media only screen and (max-width: 960px) and (min-width: 765px) {
+            #rlabel5,
+            #rlabel4 {
+                padding-top: 0px;
+                width: 100%;
+                float: none;
+            }
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            min-height: 100%;
+        }
+
+        fieldset {
+            min-height: 40%;
+        }
+
+        .section-subtitle {
+            font-family: monospace, "Lucida Console", "Courier New";
+        }
+
+        #people {
+            margin-top: 10px;
+        }
+
+        .g-key22,
+        .g-value22,
+        .g-value5,
+        .g-value6 {
+            width: 100%;
+        }
+
+        #retro-mail-form {
+          display: flex;
+          flex-direction: row;;
+          flex-wrap: wrap;
+          text-align: center;
+        }
+
+        #fieldSet_2 {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+
+        @media only screen and (max-width: 400px) {
+            .g-value22 {
+                width: 100%;
+            }
+        }
+        /*headings*/
+
+        .fs-title {
+            font-size: 20px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            text-align: center;
+            width: 100%;
+        }
+
+        @media only screen and (max-width: 960px) and (min-width: 500px) {
+            .g-value44 {
+                width: 100%;
+            }
+        }
+
   </style>
 </head>
 
 <body>
   <div id="pagepiling">
 
-    <div  class="section" id="particles">
+    <div  class="section pp-scrollable" id="particles">
 
       <video autoplay loop id="myVideo">
         <source src="vid/intro.mp4" type="video/mp4">
@@ -474,9 +864,7 @@
         <br/>
         <br/>
         <br/>
-        <br/>
-        <br/>
-        <br/>
+
 
         <div class="btn">
           <div class="btn-back">
@@ -484,17 +872,119 @@
               <input name="email" type="email" placeholder="Email" required>
               <button type="submit">Send</button>
             </form> -->
-            <form name="submit-to-google-sheet" class="pure-form pure-form-stacked">
-              <fieldset>
+            <form action="" method="" id="retro-mail-form" name="submit-to-google-sheet">
+                           <ul id="progressbar">
+                             <center>
+                               <li class="active">Personal Details</li>
+                               <li>Team Details</li>
+                               <li>Submit</li>
+                             </center>
+                           </ul>
+                           <fieldset id='fieldSet_1'>
+                               <label id="icon" for="name"><i class="fa fa-user"></i></label>
+                               <input type="text" name="name" id="name" placeholder="Name" required onchange="return nvalidation()" />
+                               <div class="notice hidden error" id="name_error">Names can't include special symbols or numbers</div>
+                               <label id="icon" for="fname"><i class="fa fa-user-md"></i></label>
+                               <input type="text" name="fname" id="fname" placeholder="Father's Name" required onchange="return fnvalidation()" />
+                               <div class="notice hidden error" id="fname_error">Names can't include special symbols or numbers</div>
+                               <div class="gender">
+                                   <label id="rlabel" class="g-key11">Gender</label>
+                                   <div class="g-value11">
+                                       <div class="g-value1">
+                                           <input type="radio" value="male" id="male" name="gender" checked />
+                                           <label for="male" class="radio">Male</label>
+                                       </div>
+                                       <div class="g-value2">
+                                           <input type="radio" value="female" id="female" name="gender" />
+                                           <label for="female" class="radio">Female</label>
+                                       </div>
+                                   </div>
+                               </div>
+                               <label id="icon" for="email"><i class="fa fa-envelope-o"></i></label>
+                               <input type="email" name="emailId" id="email" placeholder="Email" required onchange="return email_val()" />
+                               <div class="notice hidden error" id="email_error">Email must be valid in the form of x@domain.com</div>
+                               <label id="icon" for="phone"><i class="fa fa-phone"></i></label>
+                               <input type="text" name="phoneNumber" id="phone" placeholder="Mobile Number (10 Digits Only)" required onchange="return mob_val()" />
+                               <div class="notice hidden error" id="mob_error">Make sure it's a 10 digit number' </div>
+                               <label id="icon" for="name"><i class="fa fa-building-o"></i></label>
+                               <input type="text" name="college" id="college" placeholder="College/ University" required onchange="return cnvalidation()" />
+                               <div class="notice hidden error" id="cname_error">College names can't include special symbols or numbers</div>
+                               <div id="events">
+                                   <label id="rlabel4" class="g-key33">Events</label>
+                                   <div class="g-value44 select-style">
+                                       <select id="evento" name="events" required onchange="return event_validation()">
+                                           <option value="">Select your event</option>
+                                                                                           <option value="1001">
+                                                   Foot it out Rs. 3000 Per Team                                                 </option>
+                                                                                               <option value="1002">
+                                                   Charisma Rs. 3000 Per Team                                                 </option>
+                                                                                               <option value="1003">
+                                                   Art Alley  Rs. 200  per Head                                                </option>
+                                                                                               <option value="1004">
+                                                   Deception Rs. 600 per Team                                                </option>
+                                                                                               <option value="1005">
+                                                   Paintball Rs. 600 per Team                                                </option>
+                                                                                               <option value="1006">
+                                                   Splitsvilla Rs. 400 per couple                                                </option>
+                                                                                               <option value="1007">
+                                                   Beg, Borrow Steal Rs. 200/- per head                                                </option>
+                                                                                               <option value="1008">
+                                                   Deception Rs. 600 per team                                                </option>
+                                                                                               <option value="1009">
+                                                   Snaptext Rs. 100 per head                                                </option>
+                                                                                               <option value="1010">
+                                                   Lan Gaming (FIFA 17) Rs. 200 per head                                                </option>
+                                                                                               <option value="1011">
+                                                   Lan Gaming (NFS MW) Rs. 200 per head                                                </option>
+                                                                                               <option value="1012">
+                                                   Lan Gaming (CS 1.6) Rs. 500                                                </option>
+                                                                                               <option value="1013">
+                                                   Laser Maze Rs. 150                                                </option>
+                                                                                               <option value="1014">
+                                                   Hogathon Rs. 100  per head                                                </option>
+                                                                                               <option value="1015">
+                                                   Pool Tournament Rs. 200 Per Head                                                </option>
+                                                                                               <option value="1016">
+                                                   The Escapade Rs. 100 Per Head                                                </option>
+                                                                                               <option value="1017">
+                                                   Motion Gaming Rs. 100 Per Head                                                </option>
+                                                                                       </select>
+                                   </div>
+                               </div>
+                               <div class="notice hidden error" id="event_error">Please select an event from the above list</div>
+                               <div id="member_ct_outer">
+                                   <label id="rlabel5" class="g-key33">Members</label>
+                                   <div class="member_ct select-style g-value44" id="member_count">
+                                       <select id="member_select" name="member_select">
+                                           <option value="1"> 1 </option>
+                                       </select>
+                                   </div>
+                               </div>
+                               <input type="button" name="next" class="button next action-button" value="Next" id="next_1">
+                           </fieldset>
 
-                <label for="email">Email</label>
-                <input name='email' id="email" type="email" placeholder="Email">
-                <button type="submit" class="pure-button pure-button-primary">Submit</button>
-                
-              </fieldset>
-            </form>
+                           <fieldset id='fieldSet_2'>
+                               <h2 class="fs-title">
+                                   <label id="rlabel3">Team Member Details</label>
+                               </h2>
+                               <!--Set g-value44 display: none and insert select inside g-value44-->
+                               <div class="g-value44" id="g-value-mem">
+                               </div>
+
+                               <div class="notice hidden error" id="member_error">Form has returned errors. Please cross verify the form.</div>
+                               <input type="button" name="previous" id="previous1" class="button previous action-button" value="Previous" style="">
+                               <input type="button" name="next" class="button next action-button" value="Next" id="next_2">
+                           </fieldset>
+
+
+                               <!--<input type="button" id='previous2' name="previous" class="button previous action-button" value="Previous" style="">
+                               --><input id="send" type="submit" value="Submit" class="button">
+                           </fieldset>
+
+                       </form>
+
           </div>
-          
+
           <div class="btn-front">
             <svg class="liquid-button" data-text="Register" data-force-factor="0.1" data-layer-1-viscosity="0.5" data-layer-2-viscosity="0.4" data-layer-1-mouse-force="400" data-layer-2-mouse-force="500" data-layer-1-force-limit="1" data-layer-2-force-limit="2" data-color1="#4DE7BF"
               data-color2="#0A3FC7" data-color3="#2A62F4"></svg>
@@ -503,6 +993,7 @@
       </div>
     </div>
     <div class="section" style="background: url(img/back.jpg)" >
+      <h1 style="margin:0 auto; color:white;margin-bottom:30px"><center>Events</center></h1>
       <div class="wrapper">
         <div class="cols">
           <div class="col" data-aos="fade-up" ontouchstart="this.classList.toggle('hover');">
@@ -522,7 +1013,7 @@
           </div>
           <div class="col" data-aos="fade-up" ontouchstart="this.classList.toggle('hover');">
             <div class="container">
-              <div class="front" style="url(https://unsplash.it/511/511/)">
+              <div class="front" style="background-image: url(https://unsplash.it/511/511/)">
                 <div class="inner">
                   <p>Rocogged</p>
                   <span>Lorem ipsum</span>
@@ -629,7 +1120,7 @@
       </div>
     </div>
     <div class="section" id="gradient">
-        <iframe src="hello.html" frameborder="0" allowtransparency="true" seamless="seamless"></iframe> 
+        <iframe src="hello.html" frameborder="0" allowtransparency="true" seamless="seamless"></iframe>
     </div>
     <div class="section">Section 4 </div>
   </div>
@@ -994,7 +1485,8 @@
       btnNo = btn.querySelector('.btn-back .no');
 
     btnFront.addEventListener('click', function(event) {
-
+      var intro = document.getElementById('intro');
+      intro.style.top = 0;
       var logo = document.getElementById('logo');
       logo.style.display = 'none';
       btnback.style.display = 'block';
@@ -1034,21 +1526,12 @@
       btn.classList.add('is-open');
 
     });
-    btnYes.addEventListener('click', function(event) {
-      var logo = document.getElementById('logo');
-      logo.style.display = 'inline';
 
-      btn.classList.remove('is-open');
-      btnback.style.display = 'none';
-    });
+    var video = document.getElementById('myVideo');
+    window.onload = () => video.play();
 
-    btnNo.addEventListener('click', function(event) {
-      var logo = document.getElementById('logo');
-      logo.style.display = 'inline';
 
-      btn.classList.remove('is-open');
-      btnback.style.display = 'none';
-    });
+
 
     function distance(x1, y1, x2, y2) {
       var dx = x1 - x2;
@@ -1113,6 +1596,422 @@
     window.onload = () => video.play();
     setInterval(updateGradient, 2);
   </script>
+  <script>
+            // can be updated to fetch JSON data from the server
+            var member_ct_arr = {
+                "1001": [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+                "1002": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],
+                "1003": [1],
+                "1004": [4],
+                "1005": [4],
+                "1006": [2],
+                "1007": [1],
+                "1008": [4],
+                "1009": [1],
+                "1010": [1],
+                "1011": [1],
+                "1012": [5],
+                "1013": [1],
+                "1014": [1],
+                "1015": [1],
+                "1016": [1],
+                "1017": [1],
+                "1018": [1]
+            };
+
+            //jQuery time
+            var current_fs, next_fs, previous_fs; //fieldsets
+            var left, opacity, scale; //fieldset properties which we will animate
+            var animating; //flag to prevent quick multi-click glitches
+            var members = 0;
+
+            $(document).on("click", "#next_1", function() {
+
+                if (validateForm1()) {
+
+                    if (members != 1) {
+                        animate_to_2(this);
+                    } else {
+                        // go to step 3
+
+                        animate_to_3(this, $(this).parent().next().next());
+                    }
+                }
+            });
+
+            function animate_to_2(thise) {
+                if (animating) return false;
+                animating = true;
+
+                current_fs = $(thise).parent();
+                next_fs = $(thise).parent().next();
+
+                //activate next step on progressbar using the index of next_fs
+                $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+                //show the next fieldset
+                next_fs.show();
+                //hide the current fieldset with style
+                current_fs.animate({
+                    opacity: 0
+                }, {
+                    step: function(now, mx) {
+                        //as the opacity of current_fs reduces to 0 - stored in "now"
+                        //1. scale current_fs down to 80%
+                        scale = 1 - (1 - now) * 0.2;
+                        //2. bring next_fs from the right(50%)
+                        left = (now * 90) + "%";
+                        //3. increase opacity of next_fs to 1 as it moves in
+                        opacity = 1 - now;
+                        current_fs.css({
+                            'transform': 'scale(' + scale + ')',
+                            'position': 'absolute'
+                        });
+                        next_fs.css({
+                            'left': left,
+                            'opacity': opacity
+                        });
+                    },
+                    duration: 0,
+                    complete: function() {
+                        current_fs.hide();
+                        animating = false;
+                    },
+                    //this comes from the custom easing plugin
+                    easing: 'easeInOutBack'
+                });
+                // get number of team members
+
+                //var sel = document.getElementById('member_select');
+                var sel = $('#member_select').val();
+
+              //  var curSel = sel.options[sel.selectedIndex].text;
+                var total = sel;
+                var countCl = $('.spnClass').length;
+
+                if((total-1)<countCl){
+                  for(jj=total;jj<=countCl;jj++){
+                    $( "#spanId"+jj ).remove();
+                  }
+                  return false;
+                }
+
+                // generate appropriate dynamic elements to fetch username, email id, contact
+                ii=1;
+                if(total>countCl){
+                    ii=countCl+1;
+                }
+
+                for (var i = ii; i < total; i++) {
+                    $("#g-value-mem").append(
+                        "<span class='spnClass' id='spanId"+i+"'><input type='text' name='teamName" + i + "' id='teamName" + i + "' placeholder='Member " + i + "' class='full-member' />" + "<input type='text' name='teamPhoneNumber" + i + "' id='teamPhoneNumber" + i + "' placeholder='Mobile Number (10 Digits Only)' class='full-member'/>" + "<input type='email' name='teamemailId" + i + "' id='teamemailId" + i + "' placeholder='Email' class='full-member' /></span>");
+                }
+            }
+
+            $(document).on("click", "#previous1", function() {
+                  $("#fieldSet_2").css('opacity', '0');
+                  $("#fieldSet_1").css('width', '90%');
+                  $("#fieldSet_1").css('opacity', '1');
+                  $("#fieldSet_1").css("display", "block");
+                  $("#fieldSet_1").css("left", "0");
+                  $("#fieldSet_1").css("position", "relative");
+                  $("#fieldSet_1").css("transform", "scale(1)");
+                  animating = false;
+            });
+
+            $(document).on("click", "#previous2", function() {
+                  $("#fieldSet_3").css('opacity', '0');
+                  if($("#member_select").val()>1){
+                      $("#fieldSet_2").css('opacity', '1');
+                      $("#fieldSet_2").css('width', '90%');
+                      $("#fieldSet_2").css("display", "block");
+                      $("#fieldSet_2").css("left", "0");
+                      $("#fieldSet_2").css("position", "relative");
+                      $("#fieldSet_2").css("transform", "scale(1)");
+                      animating = false;
+                  }
+                  else{
+                      $("#fieldSet_1").css('opacity', '1');
+                      $("#fieldSet_1").css('width', '90%');
+                      $("#fieldSet_1").css("display", "block");
+                      $("#fieldSet_1").css("left", "0");
+                      $("#fieldSet_1").css("position", "relative");
+                      $("#fieldSet_1").css("transform", "scale(1)");
+                      animating = false;
+                  }
+            });
+
+
+
+            $(document).on("click", "#next_2", function() {
+                if (validateForm2()) {
+                    document.getElementById('member_error').style.display = 'none';
+                    animate_to_3(this, $(this).parent().next());
+                }
+                else {
+                    document.getElementById('member_error').style.display = 'block';
+                }
+            });
+
+            function animate_to_3(thise, nexte) {
+                if (animating) return false;
+                animating = true;
+
+                current_fs = $(thise).parent();
+                next_fs = nexte;
+
+                //activate next step on progressbar using the index of next_fs
+                $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+                //show the next fieldset
+                next_fs.show();
+                //hide the current fieldset with style
+                current_fs.animate({
+                    opacity: 0
+                }, {
+                    step: function(now, mx) {
+                        //as the opacity of current_fs reduces to 0 - stored in "now"
+                        //1. scale current_fs down to 80%
+                        scale = 1 - (1 - now) * 0.2;
+                        //2. bring next_fs from the right(50%)
+                        left = (now * 90) + "%";
+                        //3. increase opacity of next_fs to 1 as it moves in
+                        opacity = 1 - now;
+                        current_fs.css({
+                            'transform': 'scale(' + scale + ')',
+                            'position': 'absolute'
+                        });
+                        next_fs.css({
+                            'left': left,
+                            'opacity': opacity
+                        });
+                    },
+                    duration: 0,
+                    complete: function() {
+                        current_fs.hide();
+                        animating = false;
+                    },
+                    //this comes from the custom easing plugin
+                    easing: 'easeInOutBack'
+                });
+            }
+
+           /* $(document).on("click", ".previous", function() {
+                if (animating) return false;
+                animating = true;
+
+                ctr--;
+                current_fs = $(this).parent();
+                previous_fs = $(this).parent().prev();
+
+                //de-activate current step on progressbar
+                $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+
+                //show the previous fieldset
+                previous_fs.show();
+                //hide the current fieldset with style
+                current_fs.animate({
+                    opacity: 0
+                }, {
+                    step: function(now, mx) {
+                        //as the opacity of current_fs reduces to 0 - stored in "now"
+                        //1. scale previous_fs from 80% to 100%
+                        scale = 0.8; + (1 - now) * 0.2;
+                        //2. take current_fs to the right(50%) - from 0%
+                        left = ((1 - now) * 50) + "%";
+                        //3. increase opacity of previous_fs to 1 as it moves in
+                        opacity = 1 - now;
+                        current_fs.css({
+                            'left': left
+                        });
+                        previous_fs.css({
+                            'transform': 'scale(' + scale + ')',
+                            'opacity': opacity
+                        });
+                    },
+                    duration: 0,
+                    complete: function() {
+                        current_fs.hide();
+                        animating = false;
+                    },
+                    //this comes from the custom easing plugin
+                    easing: 'easeInOutBack'
+                });
+            });    */
+
+            $(".submit").click(function() {
+                return false;
+            })
+
+            function nvalidation() {
+                var name = document.getElementById('name').value;
+                var chars = /^[a-zA-Z-, ]+$/;
+                if (!name.match(chars)) {
+                    document.getElementById('name_error').style.display = "block";
+                    return false
+                } else {
+                    document.getElementById('name_error').style.display = "none";
+                    return true
+                }
+            }
+
+            function fnvalidation() {
+                var fname = document.getElementById('fname').value;
+                var chars = /^[a-zA-Z-, ]+$/;
+                if (!fname.match(chars)) {
+                    document.getElementById('fname_error').style.display = "block";
+                    return false
+                } else {
+                    document.getElementById('fname_error').style.display = "none";
+                    return true
+                }
+            }
+
+            function cnvalidation() {
+                var cname = document.getElementById('college').value;
+                var chars = /^[a-zA-Z-, ]+$/;
+                if (!cname.match(chars)) {
+                    document.getElementById('cname_error').style.display = "block";
+                    return false
+                } else {
+                    document.getElementById('cname_error').style.display = "none";
+                    return true
+                }
+            }
+
+            function email_val() {
+                var str = document.getElementById('email').value;
+                var indexofat = str.lastIndexOf('@');
+                var indexofdot = str.lastIndexOf('.');
+
+                if (indexofat < 0) {
+                    document.getElementById('email_error').style.display = "Block";
+                    return false
+                } else if (indexofat > indexofdot) {
+                    document.getElementById('email_error').style.display = "Block";
+                    return false
+                } else {
+                    document.getElementById('email_error').style.display = "None";
+                    return true
+                }
+            }
+
+            function mob_val() {
+                var mob = document.getElementById('phone').value;
+                var chars = /^[0-9]+$/;
+                if ((mob.length < 10) || (mob.length > 10)) {
+                    document.getElementById('mob_error').style.display = "Block";
+                    return false
+                } else if (!mob.match(chars)) {
+                    document.getElementById('mob_error').style.display = "Block";
+                    return false
+                } else {
+                    document.getElementById('mob_error').style.display = "None";
+                    return true
+                }
+            }
+
+            function event_validation() {
+                var events = document.getElementById("evento");
+                var event_val = events.options[events.selectedIndex].value;
+
+                if (event_val === "") {
+                    document.getElementById('event_error').style.display = "Block";
+                    document.getElementById('member_ct_outer').style.display = "none";
+                    return false
+                } else {
+                    document.getElementById('event_error').style.display = "none";
+                    document.getElementById('member_ct_outer').style.display = "Block";
+                    var mySelect = document.getElementById('member_select');
+                    mySelect.innerHTML="";
+
+                    members = member_ct_arr[event_val];
+                    if (members.length == 1 && members[0] === 1) {
+                        var newOption = document.createElement("option");
+                        newOption.text = members[0];
+                        newOption.value = members[0];
+                        mySelect.add(newOption, 0);
+                    } else {
+                        for (var i = 0; i < members.length; i++) {
+                            var newOption = document.createElement("option");
+                            newOption.text = members[i];
+                            newOption.value = members[i];
+                            mySelect.add(newOption, i);
+                        }
+                    }
+                    return true
+                }
+            }
+
+            function validateForm1() {
+                var check = (nvalidation() && fnvalidation() && email_val() && mob_val() && cnvalidation()) ? true : false;
+                return check;
+            }
+
+            function acc_vis() {
+                var accomodation = document.getElementsByName('accomodation').value;
+
+                if (document.getElementById('acc1').checked == true) {
+                    document.getElementById('days').style.display = "Block";
+                    document.getElementById('people').style.display = "Block";
+                } else {
+                    document.getElementById('days').style.display = "None";
+                    document.getElementById('people').style.display = "None";
+                }
+            }
+
+            function validateForm2() {
+                var mem_sel = $("#member_select").val().trim();
+                if (mem_sel == 1) {
+                    return true;
+                } else {
+                    // do cool dynamic validation stuff here
+                    /*for(var i = 1; i < mem_sel; i++) {
+                        var name_id = 'teamName' + i;
+                        var mail_id = 'teamemailId' + i;
+                        var cell_id = 'teamPhoneNumber' + i;
+
+                        var name = document.getElementById(name_id).value;
+
+                        var chars = /^[a-zA-Z-, ]+$/;
+                        if (!name.match(chars)) {
+                            $("#"+name_id).focus();
+                            return false
+                        }
+
+                        var mob = document.getElementById(cell_id).value;
+                        var chars = /^[0-9]+$/;
+                        if ((mob.length < 10) || (mob.length > 10)) {
+                            $("#"+cell_id).focus();
+                            return false
+                        } else if (!mob.match(chars)) {
+                            $("#"+cell_id).focus();
+                            return false
+                        }
+
+                        var str = document.getElementById(mail_id).value;
+                        var indexofat = str.lastIndexOf('@');
+                        var indexofdot = str.lastIndexOf('.');
+
+                        if (indexofat < 0) {
+                            $("#"+mail_id).focus();
+                            return false
+                        } else if (indexofat > indexofdot) {
+                            $("#"+mail_id).focus();
+                            return false
+                        }
+                    }
+					*/
+                    return true;
+                }
+            }
+
+            function validateForm() {
+                var check = (nvalidation() && fnvalidation() && email_val() && mob_val()) ? true : false;
+                return check;
+            }
+        </script>
+
 </body>
 
 </html>
