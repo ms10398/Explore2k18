@@ -154,6 +154,150 @@ $('.ipl-container').click(function() {
   $('body').removeClass('modal-active');
 });
 
+$('.logo-quiz').click(function() {
+  var buttonId = $(this).attr('id');
+  $('.logo-container').removeClass('out');
+  $('.logo-container').addClass(buttonId);
+  $('body').addClass('modal-active');
+})
+
+$('.logo-container').click(function() {
+  $(this).addClass('out');
+  $('body').removeClass('modal-active');
+});
+
+$('.business').click(function() {
+  var buttonId = $(this).attr('id');
+  $('.business-container').removeClass('out');
+  $('.business-container').addClass(buttonId);
+  $('body').addClass('modal-active');
+})
+
+$('.business-container').click(function() {
+  $(this).addClass('out');
+  $('body').removeClass('modal-active');
+});
+
+$('.pithoo').click(function() {
+  var buttonId = $(this).attr('id');
+  $('.pithoo-container').removeClass('out');
+  $('.pithoo-container').addClass(buttonId);
+  $('body').addClass('modal-active');
+})
+
+$('.pithoo-container').click(function() {
+  $(this).addClass('out');
+  $('body').removeClass('modal-active');
+});
+
+$('.spell').click(function() {
+  var buttonId = $(this).attr('id');
+  $('.spell-container').removeClass('out');
+  $('.spell-container').addClass(buttonId);
+  $('body').addClass('modal-active');
+})
+
+$('.spell-container').click(function() {
+  $(this).addClass('out');
+  $('body').removeClass('modal-active');
+});
+
+$('.auto').click(function() {
+  var buttonId = $(this).attr('id');
+  $('.auto-container').removeClass('out');
+  $('.auto-container').addClass(buttonId);
+  $('body').addClass('modal-active');
+})
+
+$('.auto-container').click(function() {
+  $(this).addClass('out');
+  $('body').removeClass('modal-active');
+});
+
+$('.pict').click(function() {
+  var buttonId = $(this).attr('id');
+  $('.pic-container').removeClass('out');
+  $('.pic-container').addClass(buttonId);
+  $('body').addClass('modal-active');
+})
+
+$('.pic-container').click(function() {
+  $(this).addClass('out');
+  $('body').removeClass('modal-active');
+});
+
+$('.jam').click(function() {
+  var buttonId = $(this).attr('id');
+  $('.jam-container').removeClass('out');
+  $('.jam-container').addClass(buttonId);
+  $('body').addClass('modal-active');
+})
+
+$('.jam-container').click(function() {
+  $(this).addClass('out');
+  $('body').removeClass('modal-active');
+});
+
+$('.minute').click(function() {
+  var buttonId = $(this).attr('id');
+  $('.minute-container').removeClass('out');
+  $('.minute-container').addClass(buttonId);
+  $('body').addClass('modal-active');
+})
+
+$('.minute-container').click(function() {
+  $(this).addClass('out');
+  $('body').removeClass('modal-active');
+});
+
+$('.doubles').click(function() {
+  var buttonId = $(this).attr('id');
+  $('.doubles-container').removeClass('out');
+  $('.doubles-container').addClass(buttonId);
+  $('body').addClass('modal-active');
+})
+
+$('.doubles-container').click(function() {
+  $(this).addClass('out');
+  $('body').removeClass('modal-active');
+});
+
+$('.laser').click(function() {
+  var buttonId = $(this).attr('id');
+  $('.laser-container').removeClass('out');
+  $('.laser-container').addClass(buttonId);
+  $('body').addClass('modal-active');
+})
+
+$('.laser-container').click(function() {
+  $(this).addClass('out');
+  $('body').removeClass('modal-active');
+});
+
+$('.mystery').click(function() {
+  var buttonId = $(this).attr('id');
+  $('.mystery-container').removeClass('out');
+  $('.mystery-container').addClass(buttonId);
+  $('body').addClass('modal-active');
+})
+
+$('.mystery-container').click(function() {
+  $(this).addClass('out');
+  $('body').removeClass('modal-active');
+});
+
+$('.bottle').click(function() {
+  var buttonId = $(this).attr('id');
+  $('.bottle-container').removeClass('out');
+  $('.botlle-container').addClass(buttonId);
+  $('body').addClass('modal-active');
+})
+
+$('.bottle-container').click(function() {
+  $(this).addClass('out');
+  $('body').removeClass('modal-active');
+});
+
 // $('.button').click(function(){
 //   var buttonId = $(this).attr('id');
 //   $('#modal-container').removeAttr('class').addClass(buttonId);
