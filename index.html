@@ -1115,6 +1115,8 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.5/jquery.pagepiling.min.js"></script>
   <script>
+  var submit = document.getElementById('submit');
+  submit.disabled = true;
     $(document).ready(function() {
       $('#pagepiling').pagepiling({
         direction: 'horizontal',
@@ -1782,6 +1784,8 @@
     $(document).on("click", "#next_2", function() {
       if (validateForm2()) {
         document.getElementById('member_error').style.display = 'none';
+        var submit = document.getElementById('submit');
+        submit.disabled = false;
         animate_to_3(this, $(this).parent().next());
       } else {
         document.getElementById('member_error').style.display = 'block';
