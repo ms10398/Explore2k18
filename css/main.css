@@ -666,7 +666,8 @@ input#submit.button {
   margin: 0 auto;
   margin-top: 5%;
 }
-
+label.radio{
+color:#fff;}
 .g-key11 {
   width: 25%;
   float: left;
@@ -722,7 +723,7 @@ input#submit.button {
   border: 1px solid #ccc;
   border-radius: 3px;
   overflow: hidden;
-  background: #fff url("/img/arrowdown.gif") no-repeat 95% 50%;
+  background: #fff
 }
 
 .select-style select {
