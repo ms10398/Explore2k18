@@ -655,6 +655,7 @@ form input {
 
 input.gender #rlabel, div#events #rlabel4, #rlabel5 {
   float: left;
+  color: #fff;
 }
 
 input#cancel.button {
@@ -669,6 +670,7 @@ input#submit.button {
 .g-key11 {
   width: 25%;
   float: left;
+  color: #fff;
   padding: 2px;
   display: inline-block;
 }
