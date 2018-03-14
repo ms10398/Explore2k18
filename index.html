@@ -30,7 +30,7 @@
         <header>
 
           <!-- here’s the avatar -->
-          <a href="https://tutsplus.com">
+          
     <img src="img/neelam.jpg">
   </a>
 
@@ -84,10 +84,6 @@
         <br/>
         <div class="btn">
           <div class="btn-back">
-            <!-- <form name="submit-to-google-sheet">
-                <input name="email" type="email" placeholder="Email" required>
-                <button type="submit">Send</button>
-                </form> -->
             <form action="" method="" id="retro-mail-form" name="submit-to-google-sheet">
               <ul id="progressbar">
                 <center>
@@ -1834,50 +1830,6 @@
         easing: 'easeInOutBack'
       });
     }
-
-    /* $(document).on("click", ".previous", function() {
-         if (animating) return false;
-         animating = true;
-
-         ctr--;
-         current_fs = $(this).parent();
-         previous_fs = $(this).parent().prev();
-
-         //de-activate current step on progressbar
-         $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
-
-         //show the previous fieldset
-         previous_fs.show();
-         //hide the current fieldset with style
-         current_fs.animate({
-             opacity: 0
-         }, {
-             step: function(now, mx) {
-                 //as the opacity of current_fs reduces to 0 - stored in "now"
-                 //1. scale previous_fs from 80% to 100%
-                 scale = 0.8; + (1 - now) * 0.2;
-                 //2. take current_fs to the right(50%) - from 0%
-                 left = ((1 - now) * 50) + "%";
-                 //3. increase opacity of previous_fs to 1 as it moves in
-                 opacity = 1 - now;
-                 current_fs.css({
-                     'left': left
-                 });
-                 previous_fs.css({
-                     'transform': 'scale(' + scale + ')',
-                     'opacity': opacity
-                 });
-             },
-             duration: 0,
-             complete: function() {
-                 current_fs.hide();
-                 animating = false;
-             },
-             //this comes from the custom easing plugin
-             easing: 'easeInOutBack'
-         });
-     });    */
-
     function nvalidation() {
       var name = document.getElementById('name').value;
       var chars = /^[a-zA-Z-, ]+$/;
@@ -1988,43 +1940,7 @@
       if (mem_sel == 1) {
         return true;
       } else {
-        // do cool dynamic validation stuff here
-        /*for(var i = 1; i < mem_sel; i++) {
-                          var name_id = 'teamName' + i;
-                          var mail_id = 'teamemailId' + i;
-                          var cell_id = 'teamPhoneNumber' + i;
-
-                          var name = document.getElementById(name_id).value;
-
-                          var chars = /^[a-zA-Z-, ]+$/;
-                          if (!name.match(chars)) {
-                              $("#"+name_id).focus();
-                              return false
-                          }
-
-                          var mob = document.getElementById(cell_id).value;
-                          var chars = /^[0-9]+$/;
-                          if ((mob.length < 10) || (mob.length > 10)) {
-                              $("#"+cell_id).focus();
-                              return false
-                          } else if (!mob.match(chars)) {
-                              $("#"+cell_id).focus();
-                              return false
-                          }
-
-                          var str = document.getElementById(mail_id).value;
-                          var indexofat = str.lastIndexOf('@');
-                          var indexofdot = str.lastIndexOf('.');
-
-                          if (indexofat < 0) {
-                              $("#"+mail_id).focus();
-                              return false
-                          } else if (indexofat > indexofdot) {
-                              $("#"+mail_id).focus();
-                              return false
-                          }
-                      }
-      	*/
+        
         return true;
       }
     }
@@ -2033,18 +1949,7 @@
       var check = (nvalidation() && fnvalidation() && email_val() && mob_val()) ? true : false;
       return check;
     }
-    // var btnYes = document.getElementById("submit");
-    // btnYes.addEventListener('click', () => {
-    //   var intro = document.getElementById('intro');
-    //   intro.style.top = '25%';
-    //   var logo = document.getElementById('logo');
-    //   logo.style.display = 'inline';
-    //
-    //   btn.classList.remove('is-open');
-    //   btnback.style.display = 'none';
-    // });
-
-
+  
   </script>
   <script src="js/modal.js"></script>
 </body>
