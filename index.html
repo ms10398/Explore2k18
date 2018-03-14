@@ -200,8 +200,8 @@
                 <input type="button" name="previous" id="previous1" class="button previous action-button" value="Previous" style="">
                 <input type="button" name="next" class="button next action-button" value="Next" id="next_2">
               </fieldset>
-              <input id="cancel" type="button" value="Cancel" class="button">
-              <input id="submit" type="button" value="Submit" class="button">
+              <input id="cancel" type="button" value="Cancel" class="button no">
+              <input id="submit" type="button" value="Submit" class="button yes">
               </fieldset>
             </form>
           </div>
@@ -213,7 +213,7 @@
         </div>
       </div>
     </div>
-    <div class="section pp-scrollable" style="background: url(img/back.jpg);background-size:cover" id="section2">
+    <div class="section pp-scrollable" style="background: url(img/back.jpg);background-size:cover;" id="section2">
       <div id="modal-container" class="voguesta-container">
         <div class="modal-background">
           <div class="modal" style="padding: 15px;">
@@ -1076,9 +1076,12 @@
           </div>
         </div>
       </div>
+ <div id="footer">YOYOYOYOYOYO</div>
     </div>
     <div class="section pp-scrollable" id="gradient">
       <iframe src="hello.html" frameborder="0" allowtransparency="true" seamless="seamless"></iframe>
+
+ <div id="footer">YOYOYOYOYOYO</div>
     </div>
   </div>
   <!-- This site is made to impress girl of MassCom :D -->
@@ -1091,14 +1094,14 @@
       $('#pagepiling').pagepiling({
         direction: 'horizontal',
         verticalCentered: true,
-        sectionsColor: ['#16a085', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
+        sectionsColor: ['#16a085', '#4BBFC3', '#7BAABE', 'whitesmoke'],
         anchors: [],
         scrollingSpeed: 700,
         easing: 'swing',
         loopBottom: true,
         loopTop: false,
         css3: true,
-        navigation: {
+       navigation: {
           'textColor': '#000',
           'bulletsColor': '#000',
           'position': 'right',
@@ -1117,7 +1120,7 @@
         },
         afterLoad: function(anchorLink, index) {
           if (index == 2) {
-            console.log("Yaha pe hai");
+            
           }
         },
         afterRender: function() {},
@@ -1128,9 +1131,20 @@
   <script type="text/javascript">
     const scriptURL = 'https://script.google.com/macros/s/AKfycbyvj1efVV804qQWeMWmjfdb0so7X4cHBeX_qUITuWXrd7Gex-kg/exec'
     const form = document.forms[0];
-
+ var btn = document.querySelector('.btn')
+var btnback = document.querySelector('.btn-back')
     var btnYes = document.getElementById("submit");
-    btnYes.addEventListener('click', () => {
+    
+
+  function distance(x1, y1, x2, y2) {
+      var dx = x1 - x2;
+      var dy = y1 - y2;
+      return Math.sqrt(dx * dx + dy * dy);
+    }
+
+
+
+btnYes.addEventListener('click', e => {
       var intro = document.getElementById('intro');
       intro.style.top = '25%';
       var logo = document.getElementById('logo');
@@ -1138,6 +1152,7 @@
 
       btn.classList.remove('is-open');
       btnback.style.display = 'none';
+    e.preventDefault()
       fetch(scriptURL, {
           method: 'POST',
           body: new FormData(form)
@@ -1145,16 +1160,56 @@
         .then(response => console.log('Success!', response))
         .catch(error => console.error('Error!', error.message))
     });
-    form.addEventListener('submit', e => {
-      console.log('form submit ho gya hurray');
-      e.preventDefault()
-      fetch(scriptURL, {
-          method: 'POST',
-          body: new FormData(form)
-        })
-        .then(response => console.log('Success!', response))
-        .catch(error => console.error('Error!', error.message))
-    })
+    var btnFront = btn.querySelector('.btn-front')
+btnFront.addEventListener('click', function(event) {
+        var intro = document.getElementById('intro');
+        intro.style.top = 0;
+        var logo = document.getElementById('logo');
+        logo.style.display = 'none';
+        btnback.style.display = 'block';
+        btnFront.style.display='none';
+        var mx = event.clientX - btn.offsetLeft,
+          my = event.clientY - btn.offsetTop;
+      
+        var w = btn.offsetWidth,
+          h = btn.offsetHeight;
+      
+        var directions = [{
+            id: 'top',
+            x: w / 2,
+            y: 0
+          },
+          {
+            id: 'right',
+            x: w,
+            y: h / 2
+          },
+          {
+            id: 'bottom',
+            x: w / 2,
+            y: h
+          },
+          {
+            id: 'left',
+            x: 0,
+            y: h / 2
+          }
+        ];
+      
+        directions.sort(function(a, b) {
+          return distance(mx, my, a.x, a.y) - distance(mx, my, b.x, b.y);
+        });
+      
+        btn.setAttribute('data-direction', directions.shift().id);
+        btn.classList.add('is-open');
+      
+      });
+
+
+
+
+
+
     const cancel=document.getElementById('cancel');
     cancel.addEventListener('click',()=>{
 
@@ -1162,12 +1217,10 @@
       intro.style.top = '25%';
       var logo = document.getElementById('logo');
       logo.style.display = 'inline';
-
+btnFront.style.display='block';
       btn.classList.remove('is-open');
       btnback.style.display = 'none';
-
-
-       location.reload()});
+});
 // Liquid Button
 $(function() {
 	// Vars
@@ -1447,6 +1500,7 @@ nextP = points[0];
 		}
 	}
 
+  
 	// Init
 	initButton();
 });
@@ -1611,10 +1665,10 @@ nextP = points[0];
       // get number of team members
 
       //var sel = document.getElementById('member_select');
-      var sel = $('#member_select').val();
+     
 
       //  var curSel = sel.options[sel.selectedIndex].text;
-      var total = sel;
+      var total = $('#member_select').val();
       var countCl = $('.spnClass').length;
 
       if ((total - 1) < countCl) {
@@ -1669,6 +1723,18 @@ nextP = points[0];
       }
     });
 
+
+    $(document).on("click", "#next_1", function() {
+ var sel = $('#member_select').val();
+      if (validateForm1() && sel==1) {
+        document.getElementById('member_error').style.display = 'none';
+        var submit = document.getElementById('submit');
+        submit.disabled = false;
+        animate_to_2(this, $(this).parent().next());
+      } else {
+        document.getElementById('member_error').style.display = 'block';
+      }
+    });
 
 
     $(document).on("click", "#next_2", function() {
