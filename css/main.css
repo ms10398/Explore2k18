@@ -258,7 +258,7 @@ height:100%;
   display: block;
   position: absolute;
   top:25%;
-  left: 25%;
+  left: 28%;
   line-height: 80px;
   cursor: pointer;
   -webkit-backface-visibility: hidden;
@@ -2326,7 +2326,6 @@ div svg:hover .arrow-fixed {
   position: absolute;
   top: 10px;
   left:12px;
-
 }
 
 
