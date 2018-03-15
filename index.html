@@ -6,7 +6,8 @@
   <meta name='viewport' content='width=device-width, initial-scale=1.0' />
   <meta http-equiv='X-UA-Compatible' content='ie=edge' />
   <title>Explore 2k18</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.5/jquery.pagepiling.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.5/jquery.pagepiling.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link href="css/main.css" rel="stylesheet">
 </head>
 <!-- What'up What'up What'up !!! -->
@@ -31,8 +32,8 @@
 
           <!-- here’s the avatar -->
 
-    <img src="img/neelam.jpg">
-  </a>
+          <img src="img/neelam.jpg">
+          </a>
 
           <!-- the username -->
           <h1>Neelam Verma</h1>
@@ -46,6 +47,42 @@
         <!-- bit of a bio; who are you? -->
         <!-- some social links to show off -->
       </aside>
+      <nav class="menu">
+  <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
+  <label class="menu-open-button" for="menu-open">
+    <span class="hamburger hamburger-1"></span>
+    <span class="hamburger hamburger-2"></span>
+    <span class="hamburger hamburger-3"></span>
+  </label>
+
+  <a href="#" class="menu-item"> <i class="fa fa-facebook"></i> </a>
+  <a href="#" class="menu-item"> <i class="fa fa-instagram"></i> </a>
+  <a href="#" class="menu-item"> <i class="fa fa-envelope"></i> </a>
+
+
+</nav>
+
+
+<!-- filters -->
+<svg xmlns="https://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <filter id="shadowed-goo">
+
+          <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+          <feGaussianBlur in="goo" stdDeviation="3" result="shadow" />
+          <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2" result="shadow" />
+          <feOffset in="shadow" dx="1" dy="1" result="shadow" />
+          <feComposite in2="shadow" in="goo" result="goo" />
+          <feComposite in2="goo" in="SourceGraphic" result="mix" />
+      </filter>
+      <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+          <feComposite in2="goo" in="SourceGraphic" result="mix" />
+      </filter>
+    </defs>
+</svg>
       <div id='intro'>
         <img src="img/Explore.png" alt="" class="logo" id="logo">
         <!-- this is the markup. you can change the details (your own name, your own avatar etc.) but don’t change the basic structure! -->
@@ -1076,20 +1113,31 @@
           </div>
         </div>
       </div>
- <div id="footer">YOYOYOYOYOYO</div>
     </div>
     <div class="section pp-scrollable" id="gradient">
+      <div id="teamleft"><svg width="18px" height="17px" viewBox="0 0 18 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g id="prev" transform="translate(8.500000, 8.500000) scale(-1, 1) translate(-8.500000, -8.500000)">
+          <polygon class="arrow" points="16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596"></polygon>
+          <polygon class="arrow-fixed" points="16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596"></polygon>
+          <path d="M-1.48029737e-15,0.56157424 L-1.48029737e-15,16.1929159 L9.708,8.33860465 L-2.66453526e-15,0.56157424 L-1.48029737e-15,0.56157424 Z M1.33333333,3.30246869 L7.62533333,8.34246869 L1.33333333,13.4327013 L1.33333333,3.30246869 L1.33333333,3.30246869 Z"></path>
+      </g>
+  </svg></div>
       <iframe src="hello.html" frameborder="0" allowtransparency="true" seamless="seamless"></iframe>
-
- <div id="footer">YOYOYOYOYOYO</div>
+      <div id="teamright"><svg width="18px" height="17px" viewBox="-1 0 18 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g>
+          <polygon class="arrow" points="16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596"></polygon>
+          <polygon class="arrow-fixed" points="16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596"></polygon>
+          <path d="M-4.58892184e-16,0.56157424 L-4.58892184e-16,16.1929159 L9.708,8.33860465 L-1.64313008e-15,0.56157424 L-4.58892184e-16,0.56157424 Z M1.33333333,3.30246869 L7.62533333,8.34246869 L1.33333333,13.4327013 L1.33333333,3.30246869 L1.33333333,3.30246869 Z"></path>
+      </g>
+  </svg></div>
     </div>
   </div>
   <!-- This site is made to impress girl of MassCom :D -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.5/jquery.pagepiling.min.js"></script>
   <script>
-  var submit = document.getElementById('submit');
-  submit.disabled = true;
+    var submit = document.getElementById('submit');
+    submit.disabled = true;
     $(document).ready(function() {
       $('#pagepiling').pagepiling({
         direction: 'horizontal',
@@ -1101,12 +1149,7 @@
         loopBottom: true,
         loopTop: false,
         css3: true,
-       navigation: {
-          'textColor': '#000',
-          'bulletsColor': '#000',
-          'position': 'right',
-          'tooltips': []
-        },
+        navigation: false,
         normalScrollElements: null,
         normalScrollElementTouchThreshold: 5,
         touchSensitivity: 5,
@@ -1120,7 +1163,7 @@
         },
         afterLoad: function(anchorLink, index) {
           if (index == 2) {
-            
+
           }
         },
         afterRender: function() {},
@@ -1131,12 +1174,12 @@
   <script type="text/javascript">
     const scriptURL = 'https://script.google.com/macros/s/AKfycbyvj1efVV804qQWeMWmjfdb0so7X4cHBeX_qUITuWXrd7Gex-kg/exec'
     const form = document.forms[0];
- var btn = document.querySelector('.btn')
-var btnback = document.querySelector('.btn-back')
+    var btn = document.querySelector('.btn')
+    var btnback = document.querySelector('.btn-back')
     var btnYes = document.getElementById("submit");
-    
 
-  function distance(x1, y1, x2, y2) {
+
+    function distance(x1, y1, x2, y2) {
       var dx = x1 - x2;
       var dy = y1 - y2;
       return Math.sqrt(dx * dx + dy * dy);
@@ -1144,7 +1187,7 @@ var btnback = document.querySelector('.btn-back')
 
 
 
-btnYes.addEventListener('click', e => {
+    btnYes.addEventListener('click', e => {
       var intro = document.getElementById('intro');
       intro.style.top = '25%';
       var logo = document.getElementById('logo');
@@ -1152,7 +1195,7 @@ btnYes.addEventListener('click', e => {
 
       btn.classList.remove('is-open');
       btnback.style.display = 'none';
-    e.preventDefault()
+      e.preventDefault()
       fetch(scriptURL, {
           method: 'POST',
           body: new FormData(form)
@@ -1160,350 +1203,353 @@ btnYes.addEventListener('click', e => {
         .then(response => console.log('Success!', response))
         .catch(error => console.error('Error!', error.message))
     });
+    var teamleft = document.getElementById('teamleft');
+    teamleft.addEventListener('click',()=> {
+      $.fn.pagepiling.moveSectionUp();
+    });
+    var teamright = document.getElementById('teamright');
+    teamright.addEventListener('click',()=> {
+      $.fn.pagepiling.moveSectionDown();
+    });
     var btnFront = btn.querySelector('.btn-front')
-btnFront.addEventListener('click', function(event) {
-        var intro = document.getElementById('intro');
-        intro.style.top = 0;
-        var logo = document.getElementById('logo');
-        logo.style.display = 'none';
-        btnback.style.display = 'block';
-        btnFront.style.display='none';
-        var mx = event.clientX - btn.offsetLeft,
-          my = event.clientY - btn.offsetTop;
-      
-        var w = btn.offsetWidth,
-          h = btn.offsetHeight;
-      
-        var directions = [{
-            id: 'top',
-            x: w / 2,
-            y: 0
-          },
-          {
-            id: 'right',
-            x: w,
-            y: h / 2
-          },
-          {
-            id: 'bottom',
-            x: w / 2,
-            y: h
-          },
-          {
-            id: 'left',
-            x: 0,
-            y: h / 2
-          }
-        ];
-      
-        directions.sort(function(a, b) {
-          return distance(mx, my, a.x, a.y) - distance(mx, my, b.x, b.y);
-        });
-      
-        btn.setAttribute('data-direction', directions.shift().id);
-        btn.classList.add('is-open');
-      
+    btnFront.addEventListener('click', function(event) {
+      var intro = document.getElementById('intro');
+      intro.style.top = 0;
+      var logo = document.getElementById('logo');
+      logo.style.display = 'none';
+      btnback.style.display = 'block';
+      btnFront.style.display = 'none';
+      var mx = event.clientX - btn.offsetLeft,
+        my = event.clientY - btn.offsetTop;
+
+      var w = btn.offsetWidth,
+        h = btn.offsetHeight;
+
+      var directions = [{
+          id: 'top',
+          x: w / 2,
+          y: 0
+        },
+        {
+          id: 'right',
+          x: w,
+          y: h / 2
+        },
+        {
+          id: 'bottom',
+          x: w / 2,
+          y: h
+        },
+        {
+          id: 'left',
+          x: 0,
+          y: h / 2
+        }
+      ];
+
+      directions.sort(function(a, b) {
+        return distance(mx, my, a.x, a.y) - distance(mx, my, b.x, b.y);
       });
 
+      btn.setAttribute('data-direction', directions.shift().id);
+      btn.classList.add('is-open');
 
+    });
 
-
-
-
-    const cancel=document.getElementById('cancel');
-    cancel.addEventListener('click',()=>{
+    const cancel = document.getElementById('cancel');
+    cancel.addEventListener('click', () => {
 
       var intro = document.getElementById('intro');
       intro.style.top = '25%';
       var logo = document.getElementById('logo');
       logo.style.display = 'inline';
-btnFront.style.display='block';
+      btnFront.style.display = 'block';
       btn.classList.remove('is-open');
       btnback.style.display = 'none';
-});
-// Liquid Button
-$(function() {
-	// Vars
-	var pointsA = [],
-		pointsB = [],
-		$canvas = null,
-		canvas = null,
-		context = null,
-		vars = null,
-		points = 8,
-		viscosity = 20,
-		mouseDist = 70,
-		damping = 0.05,
-		showIndicators = false;
-		mouseX = 0,
-		mouseY = 0,
-		relMouseX = 0,
-		relMouseY = 0,
-		mouseLastX = 0,
-		mouseLastY = 0,
-		mouseDirectionX = 0,
-		mouseDirectionY = 0,
-		mouseSpeedX = 0,
-		mouseSpeedY = 0;
+    });
+    // Liquid Button
+    $(function() {
+      // Vars
+      var pointsA = [],
+        pointsB = [],
+        $canvas = null,
+        canvas = null,
+        context = null,
+        vars = null,
+        points = 8,
+        viscosity = 20,
+        mouseDist = 70,
+        damping = 0.05,
+        showIndicators = false;
+      mouseX = 0,
+        mouseY = 0,
+        relMouseX = 0,
+        relMouseY = 0,
+        mouseLastX = 0,
+        mouseLastY = 0,
+        mouseDirectionX = 0,
+        mouseDirectionY = 0,
+        mouseSpeedX = 0,
+        mouseSpeedY = 0;
 
-	/**
-	 * Get mouse direction
-	 */
-	function mouseDirection(e) {
-		if (mouseX < e.pageX)
-			mouseDirectionX = 1;
-		else if (mouseX > e.pageX)
-			mouseDirectionX = -1;
-		else
-			mouseDirectionX = 0;
+      /**
+       * Get mouse direction
+       */
+      function mouseDirection(e) {
+        if (mouseX < e.pageX)
+          mouseDirectionX = 1;
+        else if (mouseX > e.pageX)
+          mouseDirectionX = -1;
+        else
+          mouseDirectionX = 0;
 
-		if (mouseY < e.pageY)
-			mouseDirectionY = 1;
-		else if (mouseY > e.pageY)
-			mouseDirectionY = -1;
-		else
-			mouseDirectionY = 0;
+        if (mouseY < e.pageY)
+          mouseDirectionY = 1;
+        else if (mouseY > e.pageY)
+          mouseDirectionY = -1;
+        else
+          mouseDirectionY = 0;
 
-		mouseX = e.pageX;
-		mouseY = e.pageY;
+        mouseX = e.pageX;
+        mouseY = e.pageY;
 
-		relMouseX = (mouseX - $canvas.offset().left);
-		relMouseY = (mouseY - $canvas.offset().top);
-	}
-	$(document).on('mousemove', mouseDirection);
+        relMouseX = (mouseX - $canvas.offset().left);
+        relMouseY = (mouseY - $canvas.offset().top);
+      }
+      $(document).on('mousemove', mouseDirection);
 
-	/**
-	 * Get mouse speed
-	 */
-	function mouseSpeed() {
-		mouseSpeedX = mouseX - mouseLastX;
-		mouseSpeedY = mouseY - mouseLastY;
+      /**
+       * Get mouse speed
+       */
+      function mouseSpeed() {
+        mouseSpeedX = mouseX - mouseLastX;
+        mouseSpeedY = mouseY - mouseLastY;
 
-		mouseLastX = mouseX;
-		mouseLastY = mouseY;
+        mouseLastX = mouseX;
+        mouseLastY = mouseY;
 
-		setTimeout(mouseSpeed, 50);
-	}
-	mouseSpeed();
+        setTimeout(mouseSpeed, 50);
+      }
+      mouseSpeed();
 
-	/**
-	 * Init button
-	 */
-	function initButton() {
-		// Get button
-		var button = $('.btn-liquid');
-		var buttonWidth = button.width();
-		var buttonHeight = button.height();
+      /**
+       * Init button
+       */
+      function initButton() {
+        // Get button
+        var button = $('.btn-liquid');
+        var buttonWidth = button.width();
+        var buttonHeight = button.height();
 
-		// Create canvas
-		$canvas = $('<canvas></canvas>');
-		button.append($canvas);
+        // Create canvas
+        $canvas = $('<canvas></canvas>');
+        button.append($canvas);
 
-		canvas = $canvas.get(0);
-		canvas.width = buttonWidth+100;
-		canvas.height = buttonHeight+100;
-		context = canvas.getContext('2d');
+        canvas = $canvas.get(0);
+        canvas.width = buttonWidth + 100;
+        canvas.height = buttonHeight + 100;
+        context = canvas.getContext('2d');
 
-		// Add points
+        // Add points
 
-		var x = buttonHeight/2;
-		for(var j = 1; j < points; j++) {
-			addPoints((x+((buttonWidth-buttonHeight)/points)*j), 0);
-		}
-		addPoints(buttonWidth-buttonHeight/5, 0);
-		addPoints(buttonWidth+buttonHeight/10, buttonHeight/2);
-		addPoints(buttonWidth-buttonHeight/5, buttonHeight);
-		for(var j = points-1; j > 0; j--) {
-			addPoints((x+((buttonWidth-buttonHeight)/points)*j), buttonHeight);
-		}
-		addPoints(buttonHeight/5, buttonHeight);
+        var x = buttonHeight / 2;
+        for (var j = 1; j < points; j++) {
+          addPoints((x + ((buttonWidth - buttonHeight) / points) * j), 0);
+        }
+        addPoints(buttonWidth - buttonHeight / 5, 0);
+        addPoints(buttonWidth + buttonHeight / 10, buttonHeight / 2);
+        addPoints(buttonWidth - buttonHeight / 5, buttonHeight);
+        for (var j = points - 1; j > 0; j--) {
+          addPoints((x + ((buttonWidth - buttonHeight) / points) * j), buttonHeight);
+        }
+        addPoints(buttonHeight / 5, buttonHeight);
 
-		addPoints(-buttonHeight/10, buttonHeight/2);
-		addPoints(buttonHeight/5, 0);
-		// addPoints(x, 0);
-		// addPoints(0, buttonHeight/2);
+        addPoints(-buttonHeight / 10, buttonHeight / 2);
+        addPoints(buttonHeight / 5, 0);
+        // addPoints(x, 0);
+        // addPoints(0, buttonHeight/2);
 
-		// addPoints(0, buttonHeight/2);
-		// addPoints(buttonHeight/4, 0);
+        // addPoints(0, buttonHeight/2);
+        // addPoints(buttonHeight/4, 0);
 
-		// Start render
-		renderCanvas();
-	}
+        // Start render
+        renderCanvas();
+      }
 
-	/**
-	 * Add points
-	 */
-	function addPoints(x, y) {
-		pointsA.push(new Point(x, y, 1));
-		pointsB.push(new Point(x, y, 2));
-	}
+      /**
+       * Add points
+       */
+      function addPoints(x, y) {
+        pointsA.push(new Point(x, y, 1));
+        pointsB.push(new Point(x, y, 2));
+      }
 
-	/**
-	 * Point
-	 */
-	function Point(x, y, level) {
-	  this.x = this.ix = 50+x;
-	  this.y = this.iy = 50+y;
-	  this.vx = 0;
-	  this.vy = 0;
-	  this.cx1 = 0;
-	  this.cy1 = 0;
-	  this.cx2 = 0;
-	  this.cy2 = 0;
-	  this.level = level;
-	}
+      /**
+       * Point
+       */
+      function Point(x, y, level) {
+        this.x = this.ix = 50 + x;
+        this.y = this.iy = 50 + y;
+        this.vx = 0;
+        this.vy = 0;
+        this.cx1 = 0;
+        this.cy1 = 0;
+        this.cx2 = 0;
+        this.cy2 = 0;
+        this.level = level;
+      }
 
-	Point.prototype.move = function() {
-		this.vx += (this.ix - this.x) / (viscosity*this.level);
-		this.vy += (this.iy - this.y) / (viscosity*this.level);
+      Point.prototype.move = function() {
+        this.vx += (this.ix - this.x) / (viscosity * this.level);
+        this.vy += (this.iy - this.y) / (viscosity * this.level);
 
-		var dx = this.ix - relMouseX,
-			dy = this.iy - relMouseY;
-		var relDist = (1-Math.sqrt((dx * dx) + (dy * dy))/mouseDist);
+        var dx = this.ix - relMouseX,
+          dy = this.iy - relMouseY;
+        var relDist = (1 - Math.sqrt((dx * dx) + (dy * dy)) / mouseDist);
 
-		// Move x
-		if ((mouseDirectionX > 0 && relMouseX > this.x) || (mouseDirectionX < 0 && relMouseX < this.x)) {
-			if (relDist > 0 && relDist < 1) {
-				this.vx = (mouseSpeedX / 4) * relDist;
-			}
-		}
-		this.vx *= (1 - damping);
-		this.x += this.vx;
+        // Move x
+        if ((mouseDirectionX > 0 && relMouseX > this.x) || (mouseDirectionX < 0 && relMouseX < this.x)) {
+          if (relDist > 0 && relDist < 1) {
+            this.vx = (mouseSpeedX / 4) * relDist;
+          }
+        }
+        this.vx *= (1 - damping);
+        this.x += this.vx;
 
-		// Move y
-		if ((mouseDirectionY > 0 && relMouseY > this.y) || (mouseDirectionY < 0 && relMouseY < this.y)) {
-			if (relDist > 0 && relDist < 1) {
-				this.vy = (mouseSpeedY / 4) * relDist;
-			}
-		}
-		this.vy *= (1 - damping);
-		this.y += this.vy;
-	};
+        // Move y
+        if ((mouseDirectionY > 0 && relMouseY > this.y) || (mouseDirectionY < 0 && relMouseY < this.y)) {
+          if (relDist > 0 && relDist < 1) {
+            this.vy = (mouseSpeedY / 4) * relDist;
+          }
+        }
+        this.vy *= (1 - damping);
+        this.y += this.vy;
+      };
 
 
-	/**
-	 * Render canvas
-	 */
-	function renderCanvas() {
-		// rAF
-		rafID = requestAnimationFrame(renderCanvas);
+      /**
+       * Render canvas
+       */
+      function renderCanvas() {
+        // rAF
+        rafID = requestAnimationFrame(renderCanvas);
 
-		// Clear scene
-		context.clearRect(0, 0, $canvas.width(), $canvas.height());
-		context.fillStyle = "rgba(0, 0, 0, 0)"
-		context.fillRect(0, 0, $canvas.width(), $canvas.height());
+        // Clear scene
+        context.clearRect(0, 0, $canvas.width(), $canvas.height());
+        context.fillStyle = "rgba(0, 0, 0, 0)"
+        context.fillRect(0, 0, $canvas.width(), $canvas.height());
 
-		// Move points
-		for (var i = 0; i <= pointsA.length - 1; i++) {
-			pointsA[i].move();
-			pointsB[i].move();
-		}
+        // Move points
+        for (var i = 0; i <= pointsA.length - 1; i++) {
+          pointsA[i].move();
+          pointsB[i].move();
+        }
 
-		// Create dynamic gradient
-		var gradientX = Math.min(Math.max(mouseX - $canvas.offset().left, 0), $canvas.width());
-		var gradientY = Math.min(Math.max(mouseY - $canvas.offset().top, 0), $canvas.height());
-		var distance = Math.sqrt(Math.pow(gradientX - $canvas.width()/2, 2) + Math.pow(gradientY - $canvas.height()/2, 2)) / Math.sqrt(Math.pow($canvas.width()/2, 2) + Math.pow($canvas.height()/2, 2));
+        // Create dynamic gradient
+        var gradientX = Math.min(Math.max(mouseX - $canvas.offset().left, 0), $canvas.width());
+        var gradientY = Math.min(Math.max(mouseY - $canvas.offset().top, 0), $canvas.height());
+        var distance = Math.sqrt(Math.pow(gradientX - $canvas.width() / 2, 2) + Math.pow(gradientY - $canvas.height() / 2, 2)) / Math.sqrt(Math.pow($canvas.width() / 2, 2) + Math.pow($canvas.height() / 2, 2));
 
-		var gradient = context.createRadialGradient(gradientX, gradientY, 300+(300*distance), gradientX, gradientY, 0);
-		gradient.addColorStop(0, '#102ce5');
-		gradient.addColorStop(1, '#E406D6');
+        var gradient = context.createRadialGradient(gradientX, gradientY, 300 + (300 * distance), gradientX, gradientY, 0);
+        gradient.addColorStop(0, '#102ce5');
+        gradient.addColorStop(1, '#E406D6');
 
-		// Draw shapes
-		var groups = [pointsA, pointsB]
+        // Draw shapes
+        var groups = [pointsA, pointsB]
 
-		for (var j = 0; j <= 1; j++) {
-			var points = groups[j];
+        for (var j = 0; j <= 1; j++) {
+          var points = groups[j];
 
-			if (j == 0) {
-				// Background style
-				context.fillStyle = '#1CE2D8';
-			} else {
-				// Foreground style
-				context.fillStyle = gradient;
-			}
+          if (j == 0) {
+            // Background style
+            context.fillStyle = '#1CE2D8';
+          } else {
+            // Foreground style
+            context.fillStyle = gradient;
+          }
 
-			context.beginPath();
-			context.moveTo(points[0].x, points[0].y);
+          context.beginPath();
+          context.moveTo(points[0].x, points[0].y);
 
-			for (var i = 0; i < points.length; i++) {
-				var p = points[i];
-				var nextP = points[i + 1];
-				var val = 30*0.552284749831;
+          for (var i = 0; i < points.length; i++) {
+            var p = points[i];
+            var nextP = points[i + 1];
+            var val = 30 * 0.552284749831;
 
-				if (nextP != undefined) {
-					// if (nextP.ix > p.ix && nextP.iy < p.iy) {
-					// 	p.cx1 = p.x;
-					// 	p.cy1 = p.y-val;
-					// 	p.cx2 = nextP.x-val;
-					// 	p.cy2 = nextP.y;
-					// } else if (nextP.ix > p.ix && nextP.iy > p.iy) {
-					// 	p.cx1 = p.x+val;
-					// 	p.cy1 = p.y;
-					// 	p.cx2 = nextP.x;
-					// 	p.cy2 = nextP.y-val;
-					// }  else if (nextP.ix < p.ix && nextP.iy > p.iy) {
-					// 	p.cx1 = p.x;
-					// 	p.cy1 = p.y+val;
-					// 	p.cx2 = nextP.x+val;
-					// 	p.cy2 = nextP.y;
-					// } else if (nextP.ix < p.ix && nextP.iy < p.iy) {
-					// 	p.cx1 = p.x-val;
-					// 	p.cy1 = p.y;
-					// 	p.cx2 = nextP.x;
-					// 	p.cy2 = nextP.y+val;
-					// } else {
+            if (nextP != undefined) {
+              // if (nextP.ix > p.ix && nextP.iy < p.iy) {
+              // 	p.cx1 = p.x;
+              // 	p.cy1 = p.y-val;
+              // 	p.cx2 = nextP.x-val;
+              // 	p.cy2 = nextP.y;
+              // } else if (nextP.ix > p.ix && nextP.iy > p.iy) {
+              // 	p.cx1 = p.x+val;
+              // 	p.cy1 = p.y;
+              // 	p.cx2 = nextP.x;
+              // 	p.cy2 = nextP.y-val;
+              // }  else if (nextP.ix < p.ix && nextP.iy > p.iy) {
+              // 	p.cx1 = p.x;
+              // 	p.cy1 = p.y+val;
+              // 	p.cx2 = nextP.x+val;
+              // 	p.cy2 = nextP.y;
+              // } else if (nextP.ix < p.ix && nextP.iy < p.iy) {
+              // 	p.cx1 = p.x-val;
+              // 	p.cy1 = p.y;
+              // 	p.cx2 = nextP.x;
+              // 	p.cy2 = nextP.y+val;
+              // } else {
 
-						p.cx1 = (p.x+nextP.x)/2;
-						p.cy1 = (p.y+nextP.y)/2;
-						p.cx2 = (p.x+nextP.x)/2;
-						p.cy2 = (p.y+nextP.y)/2;
+              p.cx1 = (p.x + nextP.x) / 2;
+              p.cy1 = (p.y + nextP.y) / 2;
+              p.cx2 = (p.x + nextP.x) / 2;
+              p.cy2 = (p.y + nextP.y) / 2;
 
-						context.bezierCurveTo(p.x, p.y, p.cx1, p.cy1, p.cx1, p.cy1);
-					// 	continue;
-					// }
+              context.bezierCurveTo(p.x, p.y, p.cx1, p.cy1, p.cx1, p.cy1);
+              // 	continue;
+              // }
 
-					// context.bezierCurveTo(p.cx1, p.cy1, p.cx2, p.cy2, nextP.x, nextP.y);
-				} else {
-nextP = points[0];
-						p.cx1 = (p.x+nextP.x)/2;
-						p.cy1 = (p.y+nextP.y)/2;
+              // context.bezierCurveTo(p.cx1, p.cy1, p.cx2, p.cy2, nextP.x, nextP.y);
+            } else {
+              nextP = points[0];
+              p.cx1 = (p.x + nextP.x) / 2;
+              p.cy1 = (p.y + nextP.y) / 2;
 
-						context.bezierCurveTo(p.x, p.y, p.cx1, p.cy1, p.cx1, p.cy1);
-				}
-			}
+              context.bezierCurveTo(p.x, p.y, p.cx1, p.cy1, p.cx1, p.cy1);
+            }
+          }
 
-			// context.closePath();
-			context.fill();
-		}
+          // context.closePath();
+          context.fill();
+        }
 
-		if (showIndicators) {
-			// Draw points
-			context.fillStyle = '#000';
-			context.beginPath();
-			for (var i = 0; i < pointsA.length; i++) {
-				var p = pointsA[i];
+        if (showIndicators) {
+          // Draw points
+          context.fillStyle = '#000';
+          context.beginPath();
+          for (var i = 0; i < pointsA.length; i++) {
+            var p = pointsA[i];
 
-				context.rect(p.x - 1, p.y - 1, 2, 2);
-			}
-			context.fill();
+            context.rect(p.x - 1, p.y - 1, 2, 2);
+          }
+          context.fill();
 
-			// Draw controls
-			context.fillStyle = '#f00';
-			context.beginPath();
-			for (var i = 0; i < pointsA.length; i++) {
-				var p = pointsA[i];
+          // Draw controls
+          context.fillStyle = '#f00';
+          context.beginPath();
+          for (var i = 0; i < pointsA.length; i++) {
+            var p = pointsA[i];
 
-				context.rect(p.cx1 - 1, p.cy1 - 1, 2, 2);
-				context.rect(p.cx2 - 1, p.cy2 - 1, 2, 2);
-			}
-			context.fill();
-		}
-	}
+            context.rect(p.cx1 - 1, p.cy1 - 1, 2, 2);
+            context.rect(p.cx2 - 1, p.cy2 - 1, 2, 2);
+          }
+          context.fill();
+        }
+      }
 
-  
-	// Init
-	initButton();
-});
+
+      // Init
+      initButton();
+    });
 
 
     var colors = new Array(
@@ -1665,7 +1711,7 @@ nextP = points[0];
       // get number of team members
 
       //var sel = document.getElementById('member_select');
-     
+
 
       //  var curSel = sel.options[sel.selectedIndex].text;
       var total = $('#member_select').val();
@@ -1725,13 +1771,16 @@ nextP = points[0];
 
 
     $(document).on("click", "#next_1", function() {
- var sel = $('#member_select').val();
-      if (validateForm1() && sel==1) {
+      var sel = $('#member_select').val();
+      if (validateForm1() && sel == 1) {
         document.getElementById('member_error').style.display = 'none';
         var submit = document.getElementById('submit');
         submit.disabled = false;
         animate_to_2(this, $(this).parent().next());
       } else {
+        if(validateForm1())
+        {}
+        else
         document.getElementById('member_error').style.display = 'block';
       }
     });
@@ -1790,6 +1839,7 @@ nextP = points[0];
         easing: 'easeInOutBack'
       });
     }
+
     function nvalidation() {
       var name = document.getElementById('name').value;
       var chars = /^[a-zA-Z-, ]+$/;
@@ -1909,7 +1959,6 @@ nextP = points[0];
       var check = (nvalidation() && fnvalidation() && email_val() && mob_val()) ? true : false;
       return check;
     }
-
   </script>
   <script src="js/modal.js"></script>
 </body>
