@@ -1519,7 +1519,8 @@ Using any unfair means will lead to disqualification of the team. <br/>
         .then(response => {
           console.log('Success!', response);
           alert("Form submitted Successfully");
-          location.reload();
+          document.getElementById("retro-mail-form").reset();
+
       })
         .catch(error => console.error('Error!', error.message))
     });
@@ -2067,7 +2068,7 @@ Using any unfair means will lead to disqualification of the team. <br/>
       $("#fieldSet_1").css("transform", "scale(1)");
       animating = false;
     });
-//Treasure is waiting at the end 
+//Treasure is waiting for you at the end 
     $(document).on("click", "#previous2", function() {
       $("#fieldSet_3").css('opacity', '0');
       if ($("#member_select").val() > 1) {
