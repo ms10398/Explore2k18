@@ -135,9 +135,11 @@
                 <div class="notice hidden error" id="email_error">Email must be valid in the form of x@domain.com</div>
                 <label id="icon" for="phone"><i class="fa fa-phone"></i></label>
                 <input type="text" name="phoneNumber" id="phone" placeholder="Mobile Number (10 Digits Only)" required onchange="return mob_val()" />
+                <input type="text" name="Rollno" id="phone" placeholder="Enter your Roll No." required />
+                <input type="text" name="Dept" id="phone" placeholder="Enter your Dept." required />
                 <div class="notice hidden error" id="mob_error">Make sure it's a 10 digit number' </div>
                 <label id="icon" for="name"><i class="fa fa-building-o"></i></label>
-                <input type="text" name="college" id="college" placeholder="College/ University" required onchange="return cnvalidation()" />
+                <input type="text" name="college" id="college" placeholder="Campus" required onchange="return cnvalidation()" />
                 <div class="notice hidden error" id="cname_error">College names can't include special symbols or numbers</div>
                 <div id="events">
                   <label id="rlabel4" class="g-key33">Events</label>
@@ -220,7 +222,7 @@
                           Bottle Flip Challenge
                         </option>
                       </select>
-			  
+
 <!-- Yo, Bro agar koi mujhe bolega ki 'Jake Chill maar Enjoy kar' To mein jaa ke Internshala pe ek aur internship apply kar dega. -->
                   </div>
                 </div>
@@ -964,7 +966,7 @@ Using phone during this round is prohibited. <br/>
 The code will be tested on a number of test cases out of which many will be hidden.
 Using any unfair means will lead to disqualification of the team. <br/>
 </p>
-<!-- I am Groot !! --> 
+<!-- I am Groot !! -->
             <svg class="modal-svg" xmlns="https://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
                 <rect x="0" y="0" fill="none" width="100%" height="100%" rx="3" ry="3"></rect>
               </svg>
@@ -1487,7 +1489,7 @@ Using any unfair means will lead to disqualification of the team. <br/>
   </script>
   </script>
   <script type="text/javascript">
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyvj1efVV804qQWeMWmjfdb0so7X4cHBeX_qUITuWXrd7Gex-kg/exec'
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwyJ-fJI3nXcpvbBAD3C3y3aFqxgZTfGOOBHWPMK_rsOfY0p2Tg/exec'
     const form = document.forms[0];
     var btn = document.querySelector('.btn')
     var btnback = document.querySelector('.btn-back')
@@ -1500,7 +1502,7 @@ Using any unfair means will lead to disqualification of the team. <br/>
       return Math.sqrt(dx * dx + dy * dy);
     }
 
-// Yaaar Yeh Code Kitna Awsome hai yaar 
+// Yaaar Yeh Code Kitna Awsome hai yaar
 
     btnYes.addEventListener('click', e => {
       var intro = document.getElementById('intro');
@@ -1528,7 +1530,7 @@ Using any unfair means will lead to disqualification of the team. <br/>
     teamleft.addEventListener('click',()=> {
       $.fn.pagepiling.moveSectionUp();
     });
-   
+
     $('#teamright svg').on('click',()=> {
       $.fn.pagepiling.moveSectionDown();
     });
@@ -2053,8 +2055,8 @@ Using any unfair means will lead to disqualification of the team. <br/>
 
       for (var i = ii; i < total; i++) {
         $("#g-value-mem").append(
-          "<span class='spnClass' id='spanId" + i + "'><input type='text' value='' name='teamName" + i + "' id='teamName" + i + "' placeholder='Member' " + i + "' class='full-member' />" + "<input type='text' value='' name='teamPhoneNumber" + i +
-          "' id='teamPhoneNumber" + i + "' placeholder='Mobile Number (10 Digits Only)' class='full-member'/>" + "<input type='email' value='' name='teamMailId" + i + "' id='teamemailId" + i + "' placeholder='Email' class='full-member' /></span>");
+          "<span class='spnClass' id='spanId" + i + "'><input type='text' value='' name='teamName" + i + "' id='teamName" + i + "' placeholder='Member' " + i + "' class='full-member' />" + "<input type='text' value='' name='teamRollNumber" + i +
+          "' id='teamRollNumber" + i + "' placeholder='Roll Number' class='full-member'/>" + "<input type='text' value='' name='teamDept" + i + "' id='teamDept" + i + "' placeholder='Dept.' class='full-member' /></span>");
       }
     }
 
@@ -2068,7 +2070,7 @@ Using any unfair means will lead to disqualification of the team. <br/>
       $("#fieldSet_1").css("transform", "scale(1)");
       animating = false;
     });
-//Treasure is waiting for you at the end 
+//Treasure is waiting for you at the end
     $(document).on("click", "#previous2", function() {
       $("#fieldSet_3").css('opacity', '0');
       if ($("#member_select").val() > 1) {
@@ -2275,7 +2277,7 @@ Using any unfair means will lead to disqualification of the team. <br/>
         return true;
       }
     }
-// SpiderMan Dies in Infinity Wars while saving Iron man! And Avengers will Take Revenge in the next movie of Marvel !!! 
+// SpiderMan Dies in Infinity Wars while saving Iron man! And Avengers will Take Revenge in the next movie of Marvel !!!
     function validateForm() {
       var check = (nvalidation() && fnvalidation() && email_val() && mob_val()) ? true : false;
       return check;
