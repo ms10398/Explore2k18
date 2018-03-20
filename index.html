@@ -905,6 +905,8 @@ The participating team must reach the designated venue 10 minutes prior to the b
             <h1 style="font-size:50px;">Spell Bee</h1>
             <p style="font-size:24px;line-height: 25px;">
 
+              Spell bee is a platform where contestants are asked to spell a broad selection of words, usually with a varying degree of difficulty. <br/>
+
 Rules: <br/>
 Team Limit: Individual Participation
 Number of rounds: 3
@@ -1029,17 +1031,16 @@ There is, however, no negative marking for an incorrect answer.
 Any team found using any unfair means will be disqualified. <br/>
  
 Rules for ROUND 2 <br/>
-The selected teams will be a given a single question to solve.
+The selected teams will be a given a single question to solve. <br/>
 Each team will use their own laptop in the contest. <br/>
-The coding languages allowed are: C , C++ , Java , Python.*
-A total of 1 hour will be given to solve the question.
-Each team member will be given 30 mins to code. <br/>
-Once the first 30 mins are over, the team member will be switched. No extra time will be given for switching.
+A total of 2 hour will be given to solve the question. <br/>
+Each team member will be given 1 hour to code. <br/>
+Once the first 1 hour are over, the team member will be switched. No extra time will be given for switching. <br/>
 The team will be initially given 5 mins to discuss. <br/>
-After which the team will not be allowed to discuss anything.
-Once the first team member is done, he/she will immediately leave the room.
+After which the team will not be allowed to discuss anything. <br/>
+Once the first team member is done, he/she will immediately leave the room. <br/>
 Using phone during this round is prohibited. <br/>
-The code will be tested on a number of test cases out of which many will be hidden.
+The code will be tested on a number of test cases out of which many will be hidden. <br/>
 Using any unfair means will lead to disqualification of the team. <br/>
 </p>
 <!-- I am Groot !! -->
@@ -1597,10 +1598,13 @@ Using any unfair means will lead to disqualification of the team. <br/>
         .then(response => {
           console.log('Success!', response);
           alert("Form submitted Successfully");
-          document.getElementById("retro-mail-form").reset();
+          location.reload();
 
       })
-        .catch(error => console.error('Error!', error.message))
+        .catch(error => {
+          console.error('Error!', error.message)
+          alert('No Intener Found!! Form not submitted');
+        })
     });
     var teamleft = document.getElementById('teamleft');
     teamleft.addEventListener('click',()=> {
